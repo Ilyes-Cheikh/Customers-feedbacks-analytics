@@ -25,7 +25,7 @@ class Produit (db.Model):
 
 @app.route('/')
 def index():
-    return(" hello world")
+    return(" hello bb ")
 
 
 
