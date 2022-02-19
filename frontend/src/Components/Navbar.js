@@ -1,13 +1,26 @@
-import React from 'react'
+import {React , useState}  from 'react'
 import "../Assets/CSS/Navbar.css"
 import logobleu from "../Assets/logobluelow.png"
 import logoblanc from "../Assets/logowhite.png"
 import pcportable from "../Assets/materiels_maint.png"
 import smartphonestablettes from"../Assets/smartphones-tablettes.png"
 function Navbar() {
+  const [charger, setCharger] = useState(false)
+    const handleCharger = (val)=>{
+        setCharger(val)
+    }
+  const [moved, setMoved] = useState(false)
+  window.addEventListener('scroll', function (e) {
+      if (window.scrollY > 0) {
+          setMoved(true)
+      }
+      else {
+          setMoved(false)
+      }
+  })
   return (
     <div>
-    <header class="header">
+        <div  className='header'  >
       <a href="#" class="logo"><img src={logoblanc}/></a>
       <nav>
         <ul class="menu-items">
@@ -233,7 +246,7 @@ function Navbar() {
           <li><a href="#" class="menu-item">About</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
     </div>
   )
 }
