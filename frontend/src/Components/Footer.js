@@ -38,7 +38,7 @@ const defaultProps = {
       />
   <footer className="footer-section">
     
-      <div className="container">
+      <div className="footer-container">
         
           {/*< div className="footer-cta pt-5 pb-5">
           
@@ -110,7 +110,7 @@ const defaultProps = {
                           </ul>
                       </div>
                   </div>
-                  <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
+                  <div className="col-xl-4 col-lg-4 col-md-6 mb-50" >
                       <div className="footer-widget">
                       <div className="footer-widget-heading">
                               <h3>Find us</h3>

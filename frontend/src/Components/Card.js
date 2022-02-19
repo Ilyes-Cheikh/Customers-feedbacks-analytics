@@ -2,27 +2,25 @@ import '../Assets/CSS/Card.css'
 import pc from '../Assets/pc.jpg'
 import Button from 'react-bootstrap/Button';
 
-export default function Card() {
+export default function Card(props) {
   return (
     <div className='card_wrap'>
       <div class="card">
         <div class="container">
           <div className="card_content">
-            <img src={pc} style={{ width: "100%" }} />
+            <img className='card_img' src={`/uploads/${props.image}`} />
             
             <div class="overlay">
-              <div class="items"></div>
               <div class="items head">
-                <p>PC mouch normal cuhefzefipzv hfzejfzejfz jifpzjigpaipjzg njjohmh jojoimhuu </p>
+                 {props.description.length > 100 ? <p> { props.description.substring(0, 95) + '...'} </p> : <p>{props.description}</p> }
               </div>
-              
               <div class="items boutton">
-                <Button variant="primary" style={{ backgroundColor: "#b2b0ae", width: "60%", borderRadius: "12px" }} >Read more </Button>
+                <Button className="card_button" variant="succes"  >Read more </Button>
               </div>
             </div>
             <div className='product_title_price'>
-              <div className='product_title'> pc mouch normal</div>
-              <div className='product_price'> 200dt</div>
+              <div className='product_title'> {props.nom_produit} </div>
+              <div className='product_price'> {props.prix_produit}  DT  </div>
             </div>
           </div>
           

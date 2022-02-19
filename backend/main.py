@@ -54,7 +54,7 @@ produits_schema = ProduitSchema(many=True)
 
 @app.route('/')
 def index():
-<<<<<<< HEAD
+
    return(" hello world")
  
 @app.route('/get', methods =['GET'])
@@ -62,9 +62,7 @@ def get_produits():
     produits= Produit.query.all()
     results = produits_schema.dump(produits)
     return jsonify(results)
-=======
-    return(" hello bb ")
->>>>>>> 1b20a6961fa287ca21e3badc9c17cf5c2ad28e7a
+
 
 @app.route('/get/<id>' , methods = ['GET'])
 def get_produit(id):

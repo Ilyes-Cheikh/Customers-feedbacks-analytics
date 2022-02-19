@@ -1,65 +1,53 @@
-import Carousel from 'react-bootstrap/Carousel';
+
 import '../Assets/CSS/Home_Page.css';
 import Card from '../Components/Card.js'
-import im1 from '../Assets/im1.jpg';
-import im2 from '../Assets/im2.jpg';
-import im3 from '../Assets/im3.jpg';
+import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { useState,useEffect } from 'react';
+import Axios from 'axios';
+import Slider from '../Components/carousel'
 
 export default function Home() {
+    const [produits,setProduits] = useState([])
+   
+const useStyles = makeStyles({
+    gridContainer: {
+        paddingLeft: "5vw",
+        paddingRight: "5vw",
+        paddingTop:"5%",
+        width:"100%",
+        
+    }
+})
+  
+    useEffect(() => {
+      let unmounted = false
+      if (!unmounted) {
+          Axios.get("http://localhost:5000/get").then(
+              (data) => {
+                  console.log(data)
+                  setProduits(data.data)
+              }
+          )
+      }
+      return () => { unmounted = true }
+  }, [])
+  const classes = useStyles();
     return (
         <div className="home_page_container">
             <div className="pub_slider">
-                <Carousel style={{ width: '100%', height: '92vh' }}>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={im1}
-                            alt="First slide"
-                            style={{ width: '100%', height: '92vh' }}
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={im2}
-                            alt="Second slide"
-                            style={{ width: '100%', height: '92vh' }}
-                        />
-
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src={im3}
-                            alt="Third slide"
-                            style={{ width: '100%', height: '92vh' }}
-                        />
-
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
+                <Slider/>
             </div>
         
-
-        
             <div className='offers_space'>
-                <div className='cards_line'>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </div>
+                <div className='space_text'> Découvrez les offres du jour </div>
+                <Grid container spacing={8} className={classes.gridContainer} columnSpacing={{ xs: 4, sm: 8, md: 12 }} >
+                    {produits.map((produit, key) =>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Card nom_produit={produit.nom_produit} description={produit.description} image={produit.image} prix_produit={produit.prix_produit} />
+                        </Grid>
+                    )}
+                </Grid>
                 </div>
         </div>
     )
