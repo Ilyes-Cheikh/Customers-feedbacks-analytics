@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:wght@400;700&display=swap");
+@import "root.css";
+
+
+
+/* header */
+.header-transparent{
+   margin: auto;
+   display: flex;
+   align-items: center;
+   height: 10vh;
+   width: 100%;
+   position: fixed;
+   z-index: 9999;
+}
+.header {
+  background:  linear-gradient(0.75turn,var(--blue-ciel),90%,var(--blue-marine));;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
+.header a {
+  text-decoration: none;
+  color: var(--black);
+  left: 0;
+  font-weight:normal;
+  
+}
+
+.header-transparent a {
+  text-decoration: none;
+  color: black;
+  left: 0;
+  font-weight: bold;
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header-transparent ul{
+  list-style: none;
+}
+.logo {
+  font-size: 2rem;
+  margin-right: 0;
+  
+}
+.logo img {
+    height: 10vh;
+    margin-top: 1vh;
+    margin-left: 2vh;
+}
+.menu-items {
+  display: flex;
+  
+  position: relative;
+  
+
+}
+.menu-items li {
+    margin-top: 2vh;
+  padding: 0.5rem 1rem;
+  transition: all  0.2s ease-in-out;
+}
+.menu-items li:hover {
+  background-color: lightgray;
+  border-radius: 0px 20px;
+  
+
+}
+.menu-items ul li:hover {
+  background-color: var(--blue-ciel);
+  border-radius: 0px 20px;
+  
+
+}
+
+
+
+/* mega menu  */
+.mega-menu {
+  position: absolute;
+  left: 0;
+  width: 80vw;
+  top: 80px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.mega-menu .content {
+  background: lightgray;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1%;
+  align-items: center;
+}
+.blog .content {
+  grid-template-columns: repeat(3, 1fr);
+}
+.content .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 3rem;
+}
+.content .col .img-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 20vw;
+  overflow: hidden;
+}
+.content .col .img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.content .col img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.content .col .img-wrapper:hover img {
+  transform: scale(1.1);
+}
+.content .col h2 {
+  color: var(--blue-ciel);
+  font-size: 1.2rem;
+  line-height: 3rem;
+  font-weight: bold;
+}
+.content .col p {
+  line-height: 1.2rem;
+}
+.content .col .mega-links {
+  border-left: 1px solid var(--blue-ciel);
+}
+.content .col .read-more {
+  display: inline-block;
+  padding-top: 1rem;
+  color: #427dad;
+  transition: color 0.3s ease;
+}
+.col .mega-links li,
+.col .mega-links li a {
+  padding: 0 1rem;
+}
+.menu-items li:hover .mega-menu {
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
+}
+.content .col .read-more:hover {
+  color: #ff652f;
+}
+
+/* section */
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section h1 {
+  font-family: "Titillium Web", serif;
+  font-weight: 700;
+  line-height: 6vw;
+  color: #427dad;
+  text-transform: uppercase;
+}
+.categorie-img img{
+  transition: transform 0.3s ease-in-out;
+
+}
+.categorie-img img:hover{
+  transform:scale(1.1) ;
+}

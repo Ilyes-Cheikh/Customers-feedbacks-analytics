@@ -1,7 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 import Axios from 'axios';
 import {useEffect, useState} from 'react'
+=======
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
+import Home from "./Pages/Home_Page";
+>>>>>>> 1b20a6961fa287ca21e3badc9c17cf5c2ad28e7a
 function App() {
   const [produits,setProduits] = useState([])
   const [produit,setProduit] = useState([])
@@ -27,6 +32,7 @@ function App() {
   ))
   return (
     <div className="App">
+<<<<<<< HEAD
          {produits.map(produit => (
     <div>
    
@@ -37,6 +43,10 @@ function App() {
     </div>
   ))}
      
+=======
+      <Navbar/>
+      <Home/>
+>>>>>>> 1b20a6961fa287ca21e3badc9c17cf5c2ad28e7a
     </div>
   );
 }

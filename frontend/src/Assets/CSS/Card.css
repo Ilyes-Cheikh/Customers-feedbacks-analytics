@@ -1,0 +1,195 @@
+@import "root.css";
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+
+
+  .card_wrap{
+    width: 100%;
+  }
+
+.card {
+    background: lightgray;
+    width: 250px;
+    height: 311px;
+    padding: 3px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  .card:hover {
+    color: white;
+    transition: color 1s;
+  }
+  .card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+ .card::before {
+    content: "";
+    width: 102%;
+    height: 102%;
+    border-radius: 25px;
+    background: linear-gradient(
+        var(--rotate),
+      #029688, #06a9f8 43%, #3c67e3);
+      position: absolute;
+      /*z-index: -1;*/
+      top: -1%;
+      left: -1%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+.card::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    background: linear-gradient(
+        var(--rotate),
+       #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  .container {
+    width: 99.5%;
+    height: 308.5px;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color:white;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+}
+.overlay {
+    width: 101%;
+    /*transform: translateX(2%);*/
+    height: 100%;
+    display: flex;
+    background: rgba(77, 77, 77, .9);
+    color: #fef5df;
+    opacity: 0;
+    transition: all 0.5s;    
+   position: absolute;
+   top: 0;
+   left: 0;
+   flex-direction: column;
+   justify-content: center;
+   
+}
+.items {
+    padding-left: 20px;
+    justify-content: center;
+}
+.head {
+    font-size: 15px;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+.head hr {
+    display: block;
+    width: 0;
+    border: none;
+    border-bottom: solid 2px #fef5df;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    transition: all 0.5s;
+}
+.price {
+    font-size: 22px;
+    line-height: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s;
+}
+.price .old {
+    text-decoration: line-through;
+    color: #b3b3b3;
+}
+.boutton {
+    opacity: 0;
+    transition: all 0.7s;
+  
+}
+
+.container:hover .overlay {
+    opacity: 0.8;
+}
+.container:hover .overlay .head {
+    transform: translateY(0px);
+}
+.container:hover .overlay hr {
+    width: 75px;
+    transition-delay: 0.4s;
+}
+.container:hover .overlay .price {
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+.container:hover .overlay .boutton {
+    transform: translateY(0px);
+    transition-delay: 0.3s;
+    opacity: 1;
+}
+
+.card_content{
+  width: 98%;
+  background: white;
+  height: 280px;
+  margin-top: 6%;
+  margin-left: 0.8%;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.product_title_price{
+  width: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+ display: flex;
+ flex-direction: column;
+}
+.product_price{
+width: 50%;
+background: var(--rouge) ;
+border-radius: 15px;
+
+}
+.product_title{
+  width: 100%;
+}
