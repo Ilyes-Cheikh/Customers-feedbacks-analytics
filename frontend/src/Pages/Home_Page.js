@@ -41,9 +41,9 @@ const useStyles = makeStyles({
         
             <div className='offers_space'>
                 <div className='space_text'> Découvrez les offres du jour </div>
-                <Grid container spacing={8} className={classes.gridContainer} columnSpacing={{ xs: 4, sm: 8, md: 12 }} >
+                <Grid container spacing={5} className={classes.gridContainer} >
                     {produits.map((produit, key) =>
-                        <Grid item xs={12} sm={6} md={4}>
+                        <Grid item xs={6} sm={3}  >
                             <Card nom_produit={produit.nom_produit} description={produit.description} image={produit.image} prix_produit={produit.prix_produit} />
                         </Grid>
                     )}
