@@ -10,7 +10,7 @@ export default function Pagination(){
   const [pageCount, setPageCount] = useState(0)
   const perPage = 3;
   const getData = async() => {
-    const res = await Axios.get("http://localhost:5000/get")
+    const res = await Axios.get("http://localhost:5000/get/")
     const data = res.data;
               const slice = data.slice(offset, offset + perPage)
               const postData = slice.map((data, key) =>
