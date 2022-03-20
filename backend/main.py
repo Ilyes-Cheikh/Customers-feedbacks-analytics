@@ -14,7 +14,11 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 ma = Marshmallow(app)
 CORS(app)
+<<<<<<< HEAD
 UPLOAD_FOLDER = '::\\frontend\\public\\uploads'
+=======
+UPLOAD_FOLDER = '..\\frontend\\public\\uploads'
+>>>>>>> d53e8de52386b845506cd70aa31db19ecbffc6e0
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
