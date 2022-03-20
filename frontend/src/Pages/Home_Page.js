@@ -5,19 +5,22 @@ import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState,useEffect } from 'react';
 import Axios from 'axios';
-import Slider from '../Components/carousel'
-
+import Slider from '../Components/carousel';
+import CircularCard from '../Components/CircularCard';
+import pc from '../Assets/pc2.jpg';
+import acc from '../Assets/accessories.jpg';
+import tab from '../Assets/tabletta.jpg';
+import ssd from '../Assets/ssd.jpg';
+import tl from '../Assets/teleph.jpg';
 export default function Home() {
     const [produits,setProduits] = useState([])
    
 const useStyles = makeStyles({
     gridContainer: {
-        paddingLeft: "5vw",
-        paddingRight: "5vw",
         paddingTop:"5%",
         width:"100%",
-        
-    }
+        paddingLeft:"2%"
+,    }
 })
   
     useEffect(() => {
@@ -38,17 +41,30 @@ const useStyles = makeStyles({
             <div className="pub_slider">
                 <Slider/>
             </div>
-        
+            <div className='categorie_space'>
+                <div className='categories_text'> Nos catégories </div>
+                <div className="circular_card_wrapper">
+                <div className='circular_card_background'>
+                <CircularCard img={acc} title=" Accéssoire et périphérique"/>
+                  <CircularCard img={pc} title="Ordinateur" />
+                  <CircularCard img={tl}  title="Téléphone"/>
+                  <CircularCard img={tab}  title="Tablette"/>
+                  <CircularCard img={ssd}  title=" Composant informatique"/>
+                </div>
+                </div>
+                </div>
             <div className='offers_space'>
-                <div className='space_text'> Découvrez les offres du jour </div>
-                <Grid container spacing={8} className={classes.gridContainer} columnSpacing={{ xs: 4, sm: 8, md: 12 }} >
+                <div className='space_text'> Bons plans recommandés pour vous </div>
+                <Grid container spacing={8} className={classes.gridContainer} columnSpacing={{ xs: 6, md: 8 }} >
                     {produits.map((produit, key) =>
-                        <Grid item xs={12} sm={6} md={4}>
+                        <Grid item xs={6} md={3}>
                             <Card nom_produit={produit.nom_produit} description={produit.description} image={produit.image} prix_produit={produit.prix_produit} />
                         </Grid>
                     )}
                 </Grid>
                 </div>
+
+               
         </div>
     )
 }

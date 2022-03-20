@@ -1,0 +1,33 @@
+.categoryPageContainer{
+    width: 100%;
+    height: auto;
+}
+
+.tab_panel_container{
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.tab_panel{
+    width : 95%;
+}
+
+.nav-link.active {
+    color: black!important;
+    background-color: lightgray !important;
+    font-size: 1.3rem !important;
+
+  }
+
+  .nav-link{
+    color: black!important;
+    font-size: 1.3rem !important;
+
+  }
+
+  .mytab{
+      padding-top: 5%;
+  }

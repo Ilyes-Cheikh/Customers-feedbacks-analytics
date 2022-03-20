@@ -4,6 +4,12 @@ import {useEffect, useState} from 'react'
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
 import Home from "./Pages/Home_Page";
+import TelephonePage from './Pages/TelephonePage';
+import TablettePage from './Pages/TablettePage';
+import OneProductPage from './Components/OneProductPage';
+import AccessoriesPage from './Pages/AccesoriesPage';
+import ComputerPage from './Pages/ComputerPage';
+import ComposantPage from './Pages/ComposantPage';
 
 function App() {
   const [produits,setProduits] = useState([])
@@ -32,8 +38,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Home/>
-      <Footer/>
+      <ComposantPage/>
     </div>
   );
 }

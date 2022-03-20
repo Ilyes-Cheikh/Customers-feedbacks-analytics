@@ -1,9 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 .home_page_container{
     width : 100%;
-    height: 200vh;
+    height: auto;
     display: block;
     top:0;
     position: relative;
+    font-family: 'Roboto', sans-serif; 
+    padding-top: 4.5%;
 }
 
 .pub_slider{
@@ -14,15 +18,23 @@
     align-items: center;
  }
 
-
-
-
 .offers_space{
     width: 100%;
-    position: relative;
+    height: auto;
     display: flex;
     flex-direction: column;
     top:0;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories_text{
+    font-size: 2.1rem;
+    width:37%;
+    padding-top: 4%;
+    text-align: left;
+    padding-left: 5%;
+    padding-bottom: 1%;
 }
 
 .space_text{
@@ -31,3 +43,22 @@
     padding-top: 4%;
 }
 
+.categorie_space{
+    width: 100%;
+    height: auto;
+}
+
+.circular_card_wrapper{
+    width: 100%;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+.circular_card_background{
+    width: 93%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C0C0C0;
+}

@@ -1,5 +1,4 @@
 import '../Assets/CSS/Card.css'
-import pc from '../Assets/pc.jpg'
 import Button from 'react-bootstrap/Button';
 
 export default function Card(props) {

@@ -14,9 +14,10 @@ export default function Slider(){
                 alt="First slide"
                
             />
-            <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <Carousel.Caption style={{fontSize:"3rem"}}>
+                <div>Profitez de nos services, </div>
+                <div>obtenez tout en un seul click.</div>
+                <p></p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -27,9 +28,9 @@ export default function Slider(){
               
             />
 
-            <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <Carousel.Caption style={{fontSize:"3rem"}}>
+                <div>JUSQU'A -70 % </div>
+                <div>Obtenez les meilleurs soldes chez nous!</div>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -40,9 +41,9 @@ export default function Slider(){
               
             />
 
-            <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <Carousel.Caption style={{fontSize:"3rem"}}>
+                <div>On Livre</div>
+                <div> sur toute la tunisie.</div>
             </Carousel.Caption>
         </Carousel.Item>
     </Carousel>

@@ -1,0 +1,37 @@
+
+.Product_page_container{
+    width: 100%;
+    height: auto;
+}
+
+.products_space{
+  width: 100%;
+  height: auto;
+  padding-top: 5%;
+  display: block;
+}
+.prod{
+    width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5%;
+  padding-left: 11%;
+}
+
+.pagination{
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    cursor: pointer;
+}
+.pagination a{
+    padding : 10px;
+    border : 1px solid #06a9f8;
+    color : #06a9f8;
+}
+.pagination_link{
+    font-weight: bold;
+}
+
