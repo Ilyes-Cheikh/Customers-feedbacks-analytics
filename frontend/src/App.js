@@ -4,6 +4,14 @@ import {useEffect, useState} from 'react'
 import AdminPage from "./Pages/AdminPage";
 import ClientPage from "./Pages/ClientPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import TelephonePage from './Pages/TelephonePage';
+import TablettePage from './Pages/TablettePage';
+import OneProductPage from './Components/OneProductPage';
+import AccessoriesPage from './Pages/AccesoriesPage';
+import ComputerPage from './Pages/ComputerPage';
+import ComposantPage from './Pages/ComposantPage';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 function App() {
   const [produits,setProduits] = useState([])
@@ -15,13 +23,35 @@ function App() {
 
   return (
     <div className="App">
-      <Router>  
+      <Router>
       <Route exact path="/admin"> 
         <AdminPage/>
         </Route>
+      </Router>
+     
+     
+      <Router>  
+     
+        <Navbar/>
         <Route exact path="/"> 
         <ClientPage/>
         </Route>
+        <Route exact path="/ordinateurs">
+        <ComputerPage/>
+        </Route>
+        <Route exact path="/telephones">
+          <TelephonePage/>
+        </Route>
+        <Route exact path="/tablettes">
+        <TablettePage/>
+        </Route>
+        <Route exact path="/composants">
+        <ComposantPage/>
+        </Route>
+        <Route exact path="/accessoires">
+          <AccessoriesPage/>
+        </Route>
+     
       </Router>
 
     </div>

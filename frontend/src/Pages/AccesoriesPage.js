@@ -17,13 +17,13 @@ export default function AccessoriesPage(){
                <div className='tab_panel'>
                <Tabs  defaultActiveKey='souris' >
   <Tab eventKey="souris" title="Souris" className='mytab'>
-<Pagination/>
+<Pagination id_categorie={3}/>
   </Tab>
   <Tab eventKey="clavier" title="Clavier" className='mytab'>
-<Pagination/>
+<Pagination id_categorie={4}/>
   </Tab>
   <Tab eventKey="casques" title="Casque et écouteurs" className='mytab'>
-<Pagination/>
+<Pagination id_categorie={5}/>
   </Tab>
 </Tabs>
 </div>

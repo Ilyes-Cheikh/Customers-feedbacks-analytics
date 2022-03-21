@@ -1,5 +1,6 @@
 from flask import Flask , request, jsonify, json, Response,Blueprint
 import os
+from sqlalchemy import select
 from Application.__init__ import db,UPLOAD_FOLDER
 from Application.models import produit_schema,produits_schema,Produit
 from Application.Produit.utils import allowed_file
@@ -22,6 +23,11 @@ def get_produit(id):
     produit_to_get = Produit.query.get(id)
     return produit_schema.jsonify(produit_to_get)
 
+
+@produit.route('/produit/getbycategorie/<cat_id>' , methods = ['GET'])
+def get_produit_bycategorie(cat_id):
+    produits_to_get = Produit.query.filter_by(categorie_id=cat_id)
+    return produits_schema.jsonify(produits_to_get)
 
 @produit.route('/produit/add' , methods=['POST'])
 def add_produit():

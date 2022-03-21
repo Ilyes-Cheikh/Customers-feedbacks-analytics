@@ -10,6 +10,7 @@ import OneProductPage from '../Components/OneProductPage';
 import AccessoriesPage from './AccesoriesPage';
 import ComputerPage from './ComputerPage';
 import ComposantPage from './ComposantPage';
+import { Router , Route} from 'react-router-dom';
 
 function ClientPage() {
   const [produits,setProduits] = useState([])
@@ -39,6 +40,7 @@ function ClientPage() {
     <div className="ClientPage">
       <Navbar/>
       <Home/>
+     
       <Footer/>
     </div>
   );

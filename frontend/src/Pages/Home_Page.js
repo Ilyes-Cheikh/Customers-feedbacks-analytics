@@ -45,11 +45,12 @@ const useStyles = makeStyles({
                 <div className='categories_text'> Nos catégories </div>
                 <div className="circular_card_wrapper">
                 <div className='circular_card_background'>
-                <CircularCard img={acc} title=" Accéssoire et périphérique"/>
-                  <CircularCard img={pc} title="Ordinateur" />
-                  <CircularCard img={tl}  title="Téléphone"/>
-                  <CircularCard img={tab}  title="Tablette"/>
-                  <CircularCard img={ssd}  title=" Composant informatique"/>
+                
+                <CircularCard img={acc} title=" Accéssoire et périphérique" link="/accessoires"/>
+                  <CircularCard img={pc} title="Ordinateur" link="/ordinateurs"/>
+                  <CircularCard img={tl}  title="Téléphone" link="/telephones"/>
+                  <CircularCard img={tab}  title="Tablette" link="tablettes"/>
+                  <CircularCard img={ssd}  title=" Composant informatique" link="/composants"/>
                 </div>
                 </div>
                 </div>

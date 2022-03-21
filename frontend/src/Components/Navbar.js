@@ -37,19 +37,15 @@ function Navbar() {
                 <div class="col">
 
                   <section >
-                    <h2>Ordinateur portable</h2>
+                    <h2>Ordinateur</h2>
                     <ul class="mega-links">
-                      <li><a href="#">PC portable</a></li>
-                      <li><a href="#">Mac</a></li>
+                      <li> 
+                        <a href="#">PC portable</a></li>
+                      <li><a href="#">PC de bureau</a></li>
                     </ul>
                       
                     
-                    
-                    <h2>Ordinateur de bureau</h2>
-                    <ul class="mega-links">
-                      <li><a href="#">Ecran</a></li>
-                      <li><a href="#">PC de bureau</a></li>
-                    </ul>
+                   
                   </section>
                 </div>
                 
@@ -60,8 +56,7 @@ function Navbar() {
                       <li><a href="#">Casque & Écouteurs</a></li>
                       <li><a href="#">Souris</a></li>
                       <li><a href="#">Clavier</a></li>
-                      <li><a href="#">Tapis</a></li>
-                      <li><a href="#">Webcam</a></li>
+                     
                       
                     </ul>
                   </section>
@@ -70,11 +65,10 @@ function Navbar() {
                   <section>
                     <h2>Composant Informatique</h2>
                     <ul class="mega-links">
-                      <li><a href="#">Disque dur interne</a></li>
-                      <li><a href="#">Afficheur</a></li>
-                      <li><a href="#">Processeur</a></li>
+                      <li><a href="#">Disque dur </a></li>
+                  
                       <li><a href="#">Carte graphique</a></li>
-                      <li><a href="#">Barrette mémoire</a></li>
+                     
                     </ul>
                   </section>
                 </div>
@@ -93,12 +87,11 @@ function Navbar() {
                 <div class="col">
 
                   <section >
-                    <h2>Telephone</h2>
+                    <h2>Téléphone</h2>
 
                     <ul class="mega-links">
                       <li><a href="#">Smartphone</a></li>
-                      <li><a href="#">Telephone portable</a></li>
-                      <li><a href="#">telephone fixe</a></li>
+                     
                       
                     </ul>
                       
@@ -113,84 +106,17 @@ function Navbar() {
                     <h2>Tablette</h2>
                     <ul class="mega-links">
                       <li><a href="#">Tablette</a></li>
-                      <li><a href="#">Etui De Protection</a></li>
-                      <li><a href="#">Chargeur Et Câble</a></li>
-                      <li><a href="#">Film De Protection</a></li>
-                      <li><a href="#">Divers</a></li>
+                      <li><a href="#">Tablette graphique</a></li>
+                   
                       
                     </ul>
                   </section>
                 </div>
-                <div class="col">
-                  <section>
-                    <h2>Accessoires Téléphones</h2>
-                    <ul class="mega-links">
-                      <li><a href="#">SmartWatch</a></li>
-                      <li><a href="#">Etui De Protection</a></li>
-                      <li><a href="#">Chargeur Et Câble</a></li>
-                      <li><a href="#">Film De Protection</a></li>
-                      <li><a href="#">Divers</a></li>
-                    </ul>
-                  </section>
-                </div>
+            
               </div>
             </div>
           </li>
-          <li>
-            <a href="#" class="menu-item">Telephone & Tablette</a>
-            <div class="mega-menu">
-              <div class="content">
-                <div class="col">
-                  <section>
-                    <h2>Featured 1</h2>
-                    <a href="#" class="img-wrapper"
-                      ><span class="img"
-                        ><img
-                          src="https://picsum.photos/400?random=1"
-                          alt="Random Image" /></span
-                    ></a>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                  </section>
-                </div>
-                <div class="col">
-                  <section>
-                    <h2>Featured 2</h2>
-                    <ul class="mega-links">
-                      <li><a href="#">Item 1</a></li>
-                      <li><a href="#">Item 2</a></li>
-                      <li><a href="#">Item 3</a></li>
-                      <li><a href="#">Item 4</a></li>
-                      <li><a href="#">Item 5</a></li>
-                    </ul>
-                  </section>
-                </div>
-                <div class="col">
-                  <section>
-                    <h2>Featured 3</h2>
-                    <ul class="mega-links">
-                      <li><a href="#">Item 1</a></li>
-                      <li><a href="#">Item 2</a></li>
-                      <li><a href="#">Item 3</a></li>
-                      <li><a href="#">Item 4</a></li>
-                      <li><a href="#">Item 5</a></li>
-                    </ul>
-                  </section>
-                </div>
-                <div class="col">
-                  <section>
-                    <h2>Featured 4</h2>
-                    <ul class="mega-links">
-                      <li><a href="#">Item 1</a></li>
-                      <li><a href="#">Item 2</a></li>
-                      <li><a href="#">Item 3</a></li>
-                      <li><a href="#">Item 4</a></li>
-                      <li><a href="#">Item 5</a></li>
-                    </ul>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </li>
+       
           <li>
             <a href="#" class="menu-item">Blog</a>
             <div class="mega-menu blog">

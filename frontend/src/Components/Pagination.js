@@ -3,14 +3,14 @@ import Axios from 'axios';
 import Card from '../Components/Card';
 import ReactPaginate from 'react-paginate';
 
-export default function Pagination(){
+export default function Pagination(props){
 
     const [data,setData] = useState([]);
     const [offset, setOffset] = useState(0);
   const [pageCount, setPageCount] = useState(0)
   const perPage = 3;
   const getData = async() => {
-    const res = await Axios.get("http://localhost:5000/get/")
+    const res = await Axios.get(`http://localhost:5000/produit/getbycategorie/${props.id_categorie}`)
     const data = res.data;
               const slice = data.slice(offset, offset + perPage)
               const postData = slice.map((data, key) =>
