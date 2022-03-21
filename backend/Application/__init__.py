@@ -1,12 +1,11 @@
-import mimetypes
 from flask import Flask , request, jsonify, json, Response
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import datetime
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-from base64 import b64encode
-import base64
+
+
 
 
 UPLOAD_FOLDER = '..\\frontend\\public\\uploads'

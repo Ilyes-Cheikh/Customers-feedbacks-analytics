@@ -31,12 +31,12 @@ def add_produit():
             file.save(os.path.join(UPLOAD_FOLDER, filename))
     
     
-    mimetype = file.mimetype
+    categorie = request.form.get('categorie_id')
     nom_produit = request.form.get('nom_produit')
     description = request.form.get('description')
     prix_produit = request.form.get('prix_produit')
     stock = request.form.get('stock') 
-    produit = Produit(nom_produit=nom_produit,description=description, image=filename, mimetype=mimetype ,prix_produit=prix_produit,stock=stock)
+    produit = Produit(nom_produit=nom_produit,description=description, image=filename, categorie_id=categorie ,prix_produit=prix_produit,stock=stock)
     db.session.add(produit)
     db.session.commit()
     return produit_schema.jsonify(produit)
@@ -60,13 +60,13 @@ def update_produit(id):
             file.save(os.path.join(UPLOAD_FOLDER, filename))
     
 
-    mimetype = file.mimetype
+    categorie = request.form.get('categorie')
     nom_produit = request.form.get('nom_produit')
     description = request.form.get('description')
     prix_produit = request.form.get('prix_produit')
     stock = request.form.get('stock') 
     produit_to_update.image = filename
-    produit_to_update.mimetype=mimetype
+    produit_to_update.categorie_id=categorie
     produit_to_update.nom_produit=nom_produit
     produit_to_update.description = description
     produit_to_update.prix_produit= prix_produit
