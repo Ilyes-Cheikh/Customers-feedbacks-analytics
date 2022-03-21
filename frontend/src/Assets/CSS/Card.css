@@ -14,7 +14,7 @@
 
 .card {
     width: 250px;
-    height: 311px;
+    height:   310px;
     padding: 3px;
     border-radius: 25px;
     cursor: pointer;
@@ -173,7 +173,7 @@
 .product_title_price{
   width: 100%;
   font-weight: bold;
-  font-size: 13px;
+  
   justify-content: center;
   align-items: center;
  display: flex;
@@ -183,20 +183,23 @@
 width: 50%;
 background: var(--rouge) ;
 border-radius: 15px;
+text-align: center;
 
 }
 .product_title{
   width: 100%;
+  font-size: 0.8rem;
 }
 
 .card_img{
-  width : 100%;
+  width : 90%;
 }
 
 .card_button{
   background: var(--blue-marine);
  border-radius: 12px; 
  color: white;
- border : 3px solid black;
+ border : 1px solid black;
+ margin-left: 50px;
 }
 
