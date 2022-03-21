@@ -15,6 +15,7 @@ def get_categories():
 
 
 
+
 @categorie.route('/categorie/add' , methods=['POST'])
 def add_categorie():  
     id_categorie = request.form.get('id_categorie')

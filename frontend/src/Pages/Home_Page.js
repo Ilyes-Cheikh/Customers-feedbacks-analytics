@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     useEffect(() => {
       let unmounted = false
       if (!unmounted) {
-          Axios.get("http://localhost:5000/get").then(
+          Axios.get("http://localhost:5000/produit/get").then(
               (data) => {
                   console.log(data)
                   setProduits(data.data)
