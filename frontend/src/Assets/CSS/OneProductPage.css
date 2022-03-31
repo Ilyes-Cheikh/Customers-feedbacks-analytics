@@ -75,6 +75,7 @@ img.left {
   color: darkred; 
   position: absolute;
   margin-right: 100%;
+  margin-top: 3%;
 }
 
 .price_space{

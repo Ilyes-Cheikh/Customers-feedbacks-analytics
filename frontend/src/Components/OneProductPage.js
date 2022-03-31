@@ -2,6 +2,7 @@ import "../Assets/CSS/OneProductPage.css";
 import pc from '../Assets/pc1.jpg';
 import Button from 'react-bootstrap/Button';
 
+import Comment from "./Comment";
 export default function OneProductPage() {
   return (
     <div className="one_product_container">
@@ -25,10 +26,11 @@ export default function OneProductPage() {
         <div className="price_space">
         <div className="the_price">1200DT</div>
         </div>
-       
+       <Comment/>
         
 
       </div>
+
     </div>
   )
 }

@@ -39,7 +39,7 @@ function ClientPage() {
   return (
     <div className="ClientPage">
       <Navbar/>
-      <Home/>
+      <ComputerPage/>
      
       <Footer/>
     </div>
