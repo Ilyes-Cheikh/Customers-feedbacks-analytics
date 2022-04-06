@@ -1,21 +1,33 @@
 import "../Assets/CSS/OneProductPage.css";
 import pc from '../Assets/pc1.jpg';
 import Button from 'react-bootstrap/Button';
+import axios from "axios";
+import { useState,useEffect } from "react";
+import { useParams} from "react-router-dom";
 
 export default function OneProductPage() {
+  let { id_produit } = useParams();
+  const [produit, setProduit] = useState({})
+  const [isloaded,setIsLoaded]= useState(false)
+
+  useEffect(() => {
+    if (!isloaded) {
+    axios.get(`http://127.0.0.1:5000/produit/get/${id_produit}`).then((data) => {
+        setProduit(data.data)
+        setIsLoaded(true)
+    }).catch(console.log('error'))}
+},[])
   return (
     <div className="one_product_container">
       <div class="product_card">
-        <div class="thumbnail"><img class="left" src={pc} /></div>
+        <div class="thumbnail"><img class="left" src={`/uploads/${produit.image}`}  /></div>
         <div class="right">
-          <div className="right_title"> Product title</div>
+          <div className="right_title"> {produit.nom_produit} </div>
           <div className="centred">
-            <div class="marque">
-              <div className="la_marque">Marque</div>
-            </div>
+            
           </div>
           <div class="separator"></div>
-          <p className="parag">Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...</p>
+          <p className="parag">{produit.description}</p>
        
   <div classNAme="buy_button">
   
@@ -23,7 +35,7 @@ export default function OneProductPage() {
         </div>       
         </div>
         <div className="price_space">
-        <div className="the_price">1200DT</div>
+        <div className="the_price">{produit.prix_produit} DT</div>
         </div>
        
         

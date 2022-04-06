@@ -60,7 +60,7 @@ const useStyles = makeStyles({
                     {produits.map((produit, key) =>
                         <Grid item xs={6} sm={3}  >
 
-                            <Card nom_produit={produit.nom_produit} description={produit.description} image={produit.image} prix_produit={produit.prix_produit} />
+                            <Card nom_produit={produit.nom_produit} description={produit.description} image={produit.image} prix_produit={produit.prix_produit}  id_produit={produit.id_produit}/>
                         </Grid>
                     )}
                 </Grid>

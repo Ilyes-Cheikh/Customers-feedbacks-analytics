@@ -12,7 +12,7 @@ import ComputerPage from './Pages/ComputerPage';
 import ComposantPage from './Pages/ComposantPage';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-
+import LoginPage from './Pages/LoginPage';
 function App() {
   const [produits,setProduits] = useState([])
   const [produit,setProduit] = useState([])
@@ -51,7 +51,12 @@ function App() {
         <Route exact path="/accessoires">
           <AccessoriesPage/>
         </Route>
-     
+        <Route exact path="/produits/:id_produit">
+          <OneProductPage/>
+        </Route>
+        <Route exact path="/login">
+          <LoginPage/>
+        </Route>
       </Router>
 
     </div>

@@ -51,3 +51,16 @@ class ProduitSchema(ma.Schema):
 
 produit_schema = ProduitSchema()
 produits_schema = ProduitSchema(many=True)
+
+
+#USER
+class User(db.model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=False)
+    address = db.Column(db.String(120), unique=False, nullable=False)
+        
+
+
+#COMMENTS
+class Comments(db.model):

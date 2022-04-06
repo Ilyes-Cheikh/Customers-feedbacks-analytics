@@ -14,7 +14,9 @@ export default function Card(props) {
                  {props.description.length > 100 ? <p> { props.description.substring(0, 95) + '...'} </p> : <p>{props.description}</p> }
               </div>
               <div class="items boutton">
+              <a  href={`http://localhost:3000/produits/${props.id_produit}`}  target='_blank'>
                 <Button className="card_button" variant="succes"  >Read more </Button>
+                </a>
               </div>
             </div>
             <div className='product_title_price'>

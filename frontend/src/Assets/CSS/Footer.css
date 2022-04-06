@@ -10,7 +10,7 @@ ul {
     width: 100%;
 }
 .footer-section {
-  background: linear-gradient(0.5turn,var(--blue-ciel),50%,var(--blue-marine));
+  background: linear-gradient(0.5turn,var(--blue-ciel),50%,var(--vert));
   position:absolute;
   width: 100%;
   transform: translateX(-0%);
@@ -20,7 +20,7 @@ ul {
   border-bottom: 1px solid #373636;
 }
 .single-cta i {
-  color: var(--blue-marine);
+  color: var(--vert);
   font-size: 30px;
   float: left;
   margin-top: 8px;
@@ -142,9 +142,9 @@ ul {
 .subscribe-form button {
     position: absolute;
     right: 0;
-    background: var(--blue-marine);
+    background: var(--vert);
     padding: 13px 20px;
-    border: 1px solid var(--blue-marine);
+    border: 1px solid var(--vert);
     top: 0;
     height: 100%;
 
@@ -162,7 +162,7 @@ ul {
   margin-left: 20px;
 }
 .footer-menu li:hover a{
-  color: var(--blue-marine);
+  color: var(--vert);
 }
 .footer-menu li a {
   font-size: 14px;

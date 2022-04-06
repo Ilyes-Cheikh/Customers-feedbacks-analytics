@@ -14,7 +14,7 @@
    z-index: 9999;
 }
 .header {
-  background:  linear-gradient(0.75turn,var(--blue-ciel),90%,var(--blue-marine));;
+  background:  linear-gradient(0.75turn,var(--blue-ciel),90%,var(--vert));;
   margin: auto;
   display: flex;
   align-items: center;

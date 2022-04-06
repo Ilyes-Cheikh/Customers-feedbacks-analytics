@@ -41,7 +41,7 @@ function Stat() {
       <Typography sx={{ fontSize: 30 }} align="center" color="text.secondary" gutterBottom>
         Nombre d'achats
       </Typography>
-      <Typography sx={{ fontSize: 80  }} align="center" color="var(--blue-marine)" component="div">
+      <Typography sx={{ fontSize: 80  }} align="center" color="var(--vert)" component="div">
         10
       </Typography>
       

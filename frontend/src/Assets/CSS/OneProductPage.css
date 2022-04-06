@@ -71,10 +71,12 @@ img.left {
   color: #4B4B4B; }
 
 .the_price {
-  font-size: 3rem;
+  font-size: 2rem;
   color: darkred; 
   position: absolute;
-  margin-right: 100%;
+  margin-right: 30%;
+  margin-top: 3%;
+  margin-left:397px;
 }
 
 .price_space{
