@@ -12,7 +12,7 @@ import acc from '../Assets/accessories.jpg';
 import tab from '../Assets/tabletta.jpg';
 import ssd from '../Assets/ssd.jpg';
 import tl from '../Assets/teleph.jpg';
-export default function Home() {
+export default function HomePage() {
     const [produits,setProduits] = useState([])
    
 const useStyles = makeStyles({

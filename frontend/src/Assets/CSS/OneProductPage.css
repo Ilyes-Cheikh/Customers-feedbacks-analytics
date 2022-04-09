@@ -74,9 +74,11 @@ img.left {
   font-size: 2rem;
   color: darkred; 
   position: absolute;
+
   margin-right: 30%;
   margin-top: 3%;
   margin-left:397px;
+
 }
 
 .price_space{

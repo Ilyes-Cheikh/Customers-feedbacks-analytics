@@ -1,9 +1,10 @@
+from enum import unique
 from Application.__init__ import db,ma
 import datetime
 from sqlalchemy.orm import relationship
 #CATEGORIE 
 class Categorie (db.Model):
-    
+    __table_args__ = {'extend_existing': True}
     id_categorie = db.Column(db.Integer , primary_key=True)
     nom_categorie = db.Column (db.String(100), nullable=False)
     produits = db.relationship('Produit', backref='categorie')
@@ -24,7 +25,7 @@ categories_schema = CategorieSchema(many=True)
 
 #PRODUIT
 class Produit (db.Model):
-    
+    __table_args__ = {'extend_existing': True}
     id_produit = db.Column(db.Integer , primary_key=True)
     nom_produit = db.Column (db.String(100), nullable=False)
     description = db.Column (db.Text, nullable=False)
@@ -33,7 +34,7 @@ class Produit (db.Model):
     prix_produit = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer)
     date_produit = db.Column(db.DateTime, default= datetime.datetime.now)
-    
+    comments = db.relationship('Comment', backref='Produit')
 
 
     def __init__ (self, nom_produit, description, image, categorie_id, prix_produit, stock):
@@ -54,13 +55,47 @@ produits_schema = ProduitSchema(many=True)
 
 
 #USER
-class User(db.model):
-    user_id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
-    address = db.Column(db.String(120), unique=False, nullable=False)
-        
+class User (db.Model):
+    user_id = db.Column(db.Integer , primary_key=True)
+    username = db.Column (db.String(100), nullable=False)
+    email =db.Column (db.String(100), nullable=False , unique=True)
+    password = db.Column (db.String(100), nullable=False)
+    address =  db.Column (db.String(150), nullable=False)
+    mobile = db.Column (db.String(100), nullable=False)
+    comments = db.relationship('Comment', backref='User')    
 
+    def __init__ (self,username,email,password,address,mobile):
+        self.username=username
+        self.email = email
+        self.password = password
+        self.address = address
+        self.mobile=mobile
+      
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ('user_id', 'username', 'email', 'password','address','mobile')
+
+
+user_schema = UserSchema()
+users_schema = UserSchema(many=True)
 
 #COMMENTS
-class Comments(db.model):
+class Comment (db.Model):
+    comment_id = db.Column(db.Integer , primary_key=True)
+    comment_text = db.Column (db.String(100), nullable=False)
+    produit_id = db.Column(db.Integer, db.ForeignKey("produit.id_produit"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
+
+    def __init__ (self,comment_text , produit_id, user_id):
+        self.comment_text=comment_text
+        self.produit_id=produit_id
+        self.user_id = user_id
+       
+      
+class CommentSchema(ma.Schema):
+    class Meta:
+        fields = ('comment_id', 'comment_text', 'produit_id', 'user_id')
+
+
+comment_schema = CommentSchema()
+comments_schema = CommentSchema(many=True)

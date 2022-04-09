@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState,useEffect } from "react";
 import { useParams} from "react-router-dom";
 
+import Comment from "./Comment";
 export default function OneProductPage() {
   let { id_produit } = useParams();
   const [produit, setProduit] = useState({})
@@ -37,10 +38,11 @@ export default function OneProductPage() {
         <div className="price_space">
         <div className="the_price">{produit.prix_produit} DT</div>
         </div>
-       
+       <Comment/>
         
 
       </div>
+
     </div>
   )
 }
