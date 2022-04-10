@@ -135,7 +135,7 @@ function Comment() {
                       margin="normal"
                     />
           <Button style={{marginBottom:"0.89%"}}  >
-          <i  class="bi bi-send"></i>
+          <i  className="bi bi-send"></i>
           </Button>
         </div>
       </Paper>

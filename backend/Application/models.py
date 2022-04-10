@@ -57,7 +57,7 @@ produits_schema = ProduitSchema(many=True)
 #USER
 class User (db.Model):
     user_id = db.Column(db.Integer , primary_key=True)
-    username = db.Column (db.String(100), nullable=False)
+    username = db.Column (db.String(100), nullable=False ,  unique=True)
     email =db.Column (db.String(100), nullable=False , unique=True)
     password = db.Column (db.String(100), nullable=False)
     address =  db.Column (db.String(150), nullable=False)

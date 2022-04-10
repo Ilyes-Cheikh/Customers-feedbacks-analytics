@@ -21,7 +21,7 @@ const MenuItem = (props) => {
         className={`menu-item`}
       >
         <div className="menu-icon">
-          <i class={iconClassName}></i>
+          <i className={iconClassName}></i>
         </div>
         <span>{name}</span>
       </Link>

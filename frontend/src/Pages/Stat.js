@@ -84,7 +84,7 @@ function Stat() {
         
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="var(--blue-marine)" component="div" >
-        <i class="bi bi-arrow-up-circle-fill">{"25"}%</i>
+        <i className="bi bi-arrow-up-circle-fill">{"25"}%</i>
         </Typography>
         
       
@@ -107,7 +107,7 @@ function Stat() {
         10
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="var(--rouge)" component="div" >
-        <i class="bi bi-arrow-down-circle-fill">{"20"}%</i>
+        <i className="bi bi-arrow-down-circle-fill">{"20"}%</i>
         </Typography>
     
     <StatCard dd={data2}/>
@@ -123,7 +123,7 @@ function Stat() {
         10
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="var(--blue-marine)" component="div" >
-        <i class="bi bi-arrow-up-circle-fill">{"50"}%</i>
+        <i className="bi bi-arrow-up-circle-fill">{"50"}%</i>
         </Typography>
       
     

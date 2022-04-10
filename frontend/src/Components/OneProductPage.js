@@ -20,14 +20,14 @@ export default function OneProductPage() {
 },[])
   return (
     <div className="one_product_container">
-      <div class="product_card">
-        <div class="thumbnail"><img class="left" src={`/uploads/${produit.image}`}  /></div>
-        <div class="right">
+      <div className="product_card">
+        <div className="thumbnail"><img className="left" src={`/uploads/${produit.image}`}  /></div>
+        <div className="right">
           <div className="right_title"> {produit.nom_produit} </div>
           <div className="centred">
             
           </div>
-          <div class="separator"></div>
+          <div className="separator"></div>
           <p className="parag">{produit.description}</p>
        
   <div classNAme="buy_button">
