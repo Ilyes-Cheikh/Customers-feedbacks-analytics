@@ -20,7 +20,7 @@ def create_app():
 
         app = Flask(__name__)
         app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:s41565383h@localhost/pcd'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:ilyes11071999@localhost/pcd'
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         db.init_app(app)
         ma.init_app(app)
