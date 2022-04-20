@@ -7,12 +7,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import PieChart from '../Components/Pie';
-import LineChart from '../Components/LineChart';
-import BarChart from '../Components/BarChart';
-import DoughnutChart from '../Components/DoughnutChart';
-import StatCard from '../Components/StatCard';
-import "../Assets/CSS/stat.css";
+import PieChart from '../../Components/Pie';
+import LineChart from '../../Components/LineChart';
+import BarChart from '../../Components/BarChart';
+import DoughnutChart from '../../Components/DoughnutChart';
+import StatCard from '../../Components/StatCard';
+import "../../Assets/CSS/stat.css";
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 

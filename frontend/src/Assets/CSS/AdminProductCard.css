@@ -1,0 +1,98 @@
+
+.twrapper{
+    width: 950px;
+    height: auto;
+    display: flex;
+    border : solid lightgray 1px;
+    padding : 2%;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.left_part{
+    width: 20%;
+    height:inherit;
+    display: table;
+}
+
+.right_part{
+    width:80%;
+    height: 100%;
+    display: block;
+}
+.prod_img_space{
+    width : 100%;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    display: table-cell;
+}
+.prod_img{
+    width : 100%;
+    height: auto;
+}
+
+.prod_title{
+    text-align: left;
+    font-size: 28px;
+    padding-bottom: 3%;
+}
+.right_part_blcok2{
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding-left: 4%;
+}
+.statistics_per_produit{
+    width:50%;
+    padding-left: 2%;
+}
+.prod_desc{
+    width: 50%;
+    display: block;
+}
+.prod_desc_prix{
+   color: #ec4079;
+   font-size: 30px;
+   width: auto;
+}
+.prod_stat{
+  display: flex;
+  width: 100%;
+  height: 29vh;
+  padding-top: 3%;
+  padding-left: 8%;
+}
+.stat_cards{
+    width: 40%;
+    display: block;
+    
+}
+.stat_card{
+    width:100%;
+    height: 43.5%;
+    padding: 1%;
+    background-color: #f3f5f7;
+    border-radius: 17px;
+    text-align: center;
+    display: block;
+}
+
+.stat_label{
+    color: #a1a0a0;
+    font-size: 16px;
+}
+.stat_value{
+    font-size: 25px;
+}
+
+.prog_bar_container{
+    width:60%;
+    display: flex;
+    justify-content: center;
+    padding-left: 10%;
+}
+.prog_bar_label{
+    padding-top: 5%;
+    color: #a1a0a0;
+}

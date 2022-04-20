@@ -7,7 +7,6 @@
     top:0;
     position: relative;
     font-family: 'Roboto', sans-serif; 
-    padding-top: 4.5%;
 }
 
 .pub_slider{
@@ -16,6 +15,8 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    padding-top: 4.5%;
+
  }
 
 .offers_space{

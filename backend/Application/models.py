@@ -8,6 +8,7 @@ class Categorie (db.Model):
     id_categorie = db.Column(db.Integer , primary_key=True)
     nom_categorie = db.Column (db.String(100), nullable=False)
     produits = db.relationship('Produit', backref='categorie')
+
     
     def __init__ (self, id_categorie ,nom_categorie):
         self.id_categorie= id_categorie
@@ -62,7 +63,6 @@ class User (db.Model):
     password = db.Column (db.String(100), nullable=False)
     address =  db.Column (db.String(150), nullable=False)
     mobile = db.Column (db.String(100), nullable=False)
-    comments = db.relationship('Comment', backref='User')    
 
     def __init__ (self,username,email,password,address,mobile):
         self.username=username
@@ -83,18 +83,21 @@ users_schema = UserSchema(many=True)
 class Comment (db.Model):
     comment_id = db.Column(db.Integer , primary_key=True)
     comment_text = db.Column (db.String(100), nullable=False)
+    comment_label = db.Column (db.String(10) , nullable=False)
     produit_id = db.Column(db.Integer, db.ForeignKey("produit.id_produit"), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
 
-    def __init__ (self,comment_text , produit_id, user_id):
+
+    def __init__ (self,comment_text ,comment_label, produit_id, user_id):
         self.comment_text=comment_text
+        self.comment_label=comment_label 
         self.produit_id=produit_id
         self.user_id = user_id
-       
+        
       
 class CommentSchema(ma.Schema):
     class Meta:
-        fields = ('comment_id', 'comment_text', 'produit_id', 'user_id')
+        fields = ('comment_id', 'comment_text','comment_label', 'produit_id', 'user_id')
 
 
 comment_schema = CommentSchema()

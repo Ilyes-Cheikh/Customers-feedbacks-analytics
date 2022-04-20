@@ -1,13 +1,16 @@
-import "../Assets/CSS/Header.css";
-import "../Assets/CSS/CategoryPage.css";
-import perif from "../Assets/ppp.jpg";
+import "../../Assets/CSS/Header.css";
+import "../../Assets/CSS/CategoryPage.css";
+import perif from "../../Assets/Images/ppp.jpg";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import Pagination from "../Components/Pagination";
-import {Link}  from "react-router-dom"
+import Pagination from "../../Components/Pagination";
+import Navbar from '../../Components/Navbar'
+import Footer from '../../Components/Footer'
+
 export default function ComputerPage() {
   return (
     <div className="categoryPageContainer">
+      <Navbar />
       <div
         className="the_header"
         style={{ background: `url(${perif}) `, backgroundSize: "cover" }}
@@ -21,14 +24,15 @@ export default function ComputerPage() {
             <Tab eventKey="pc" title="PC protable" className="mytab">
               <Pagination id_categorie={1} />
             </Tab>
-          
+
             <Tab eventKey="Unité" title="Unité centrale" className="mytab">
-            <Pagination id_categorie={2} />
+              <Pagination id_categorie={2} />
             </Tab>
-           
+
           </Tabs>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

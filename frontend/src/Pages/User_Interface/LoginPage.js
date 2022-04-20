@@ -1,5 +1,5 @@
 import React,{useState,useEffect}from "react"
-import '../Assets/CSS/LoginPage.css'
+import '../../Assets/CSS/LoginPage.css'
 
 export default function LoginPage() {
     const [username,setUsername]=useState('')

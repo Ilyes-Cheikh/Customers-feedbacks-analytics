@@ -1,9 +1,9 @@
 import {React , useState}  from 'react'
 import "../Assets/CSS/Navbar.css"
-import logobleu from "../Assets/logobluelow.png"
-import logoblanc from "../Assets/logowhite.png"
-import pcportable from "../Assets/materiels_maint.png"
-import smartphonestablettes from"../Assets/smartphones-tablettes.png"
+import logobleu from "../Assets/Images/logobluelow.png"
+import logoblanc from "../Assets/Images/logowhite.png"
+import pcportable from "../Assets/Images/materiels_maint.png"
+import smartphonestablettes from"../Assets/Images/smartphones-tablettes.png"
 function Navbar() {
   const [charger, setCharger] = useState(false)
     const handleCharger = (val)=>{

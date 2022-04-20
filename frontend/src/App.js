@@ -1,61 +1,47 @@
 import './App.css';
-import Axios from 'axios';
-import {useEffect, useState} from 'react'
-import AdminPage from "./Pages/AdminPage";
-import ClientPage from "./Pages/ClientPage";
+import AdminPage from "./Pages/Admin_Interface/AdminPage";
+import HomePage from "./Pages/User_Interface/HomePage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import TelephonePage from './Pages/TelephonePage';
-import TablettePage from './Pages/TablettePage';
+import TelephonePage from './Pages/User_Interface/TelephonePage';
+import TablettePage from './Pages/User_Interface/TablettePage';
 import OneProductPage from './Components/OneProductPage';
-import AccessoriesPage from './Pages/AccesoriesPage';
-import ComputerPage from './Pages/ComputerPage';
-import ComposantPage from './Pages/ComposantPage';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
-import LoginPage from './Pages/LoginPage';
+import AccessoriesPage from './Pages/User_Interface/AccesoriesPage';
+import ComputerPage from './Pages/User_Interface/ComputerPage';
+import ComposantPage from './Pages/User_Interface/ComposantPage';
+import LoginPage from './Pages/User_Interface/LoginPage';
 function App() {
-  const [produits,setProduits] = useState([])
-  const [produit,setProduit] = useState([])
-  const [prix,setPrix] = useState(0)
-
-
-  
-
   return (
     <div className="App">
       <Router>
-      <Route exact path="/admin"> 
-        <AdminPage/>
+        <Route exact path="/admin">
+          <AdminPage />
         </Route>
       </Router>
-     
-     
-      <Router>  
-     
-        <Navbar/>
-        <Route exact path="/"> 
-        <ClientPage/>
+      <Router>
+
+        <Route exact path="/">
+          <HomePage />
         </Route>
         <Route exact path="/ordinateurs">
-        <ComputerPage/>
+          <ComputerPage />
         </Route>
         <Route exact path="/telephones">
-          <TelephonePage/>
+          <TelephonePage />
         </Route>
         <Route exact path="/tablettes">
-        <TablettePage/>
+          <TablettePage />
         </Route>
         <Route exact path="/composants">
-        <ComposantPage/>
+          <ComposantPage />
         </Route>
         <Route exact path="/accessoires">
-          <AccessoriesPage/>
+          <AccessoriesPage />
         </Route>
         <Route exact path="/produits/:id_produit">
-          <OneProductPage/>
+          <OneProductPage />
         </Route>
         <Route exact path="/login">
-          <LoginPage/>
+          <LoginPage />
         </Route>
       </Router>
 

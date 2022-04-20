@@ -4,7 +4,7 @@ import "../Assets/CSS/root.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Wave from "react-wavify";
 import GoogleMapReact from 'google-map-react';
-import whitelogo from "../Assets/logowhitelow.png"
+import whitelogo from "../Assets/Images/logowhitelow.png"
 const location = {
     address: "École Nationale des Sciences de l'Informatique",
     lat: 36.813651,
