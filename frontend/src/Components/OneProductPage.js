@@ -38,6 +38,11 @@ export default function OneProductPage() {
         <div className="price_space">
         <div className="the_price">{produit.prix_produit} DT</div>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
        <Comment/>
         
 

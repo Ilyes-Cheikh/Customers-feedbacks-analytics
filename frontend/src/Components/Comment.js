@@ -9,7 +9,7 @@ const imgLink =
 function Comment() {
   return (
     <div style={{ padding: 14,opacity:"0.8" }} className="App" >
-      <h1>Comments</h1>
+      <h1 style={{marginRight: "400px"}}> Comments </h1>
       <Paper style={{ padding: "40px 20px" }}>
         <Grid container wrap="wrap" spacing={2}>
           <Grid item>
