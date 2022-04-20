@@ -35,10 +35,17 @@ def create_app():
                 from Application.Categorie.routes import categorie
                 from Application.User.routes import user
                 from Application.Comment.routes import comment
+                from Application.Achat.routes import achat
+                from Application.DetailAchat.routes import detailachat
+
                 app.register_blueprint(produit)
                 app.register_blueprint(categorie)
                 app.register_blueprint(user)
                 app.register_blueprint(comment)
+                app.register_blueprint(achat)
+                app.register_blueprint(detailachat)
+
+
         @app.route('/')
         def index():
                  return(" hello new  world")
