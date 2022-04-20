@@ -20,7 +20,7 @@ def create_app():
 
         app = Flask(__name__)
         app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:ilyes11071999@localhost/PCD'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@localhost/PCD'
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         db.init_app(app)
         ma.init_app(app)
@@ -31,10 +31,17 @@ def create_app():
                 from Application.Categorie.routes import categorie
                 from Application.User.routes import user
                 from Application.Comment.routes import comment
+                from Application.Achat.routes import achat
+                from Application.DetailAchat.routes import detailachat
+
                 app.register_blueprint(produit)
                 app.register_blueprint(categorie)
                 app.register_blueprint(user)
                 app.register_blueprint(comment)
+                app.register_blueprint(achat)
+                app.register_blueprint(detailachat)
+
+
         @app.route('/')
         def index():
                  return(" hello new  world")
