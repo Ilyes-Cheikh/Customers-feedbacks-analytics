@@ -21,24 +21,24 @@ function Navbar() {
   return (
     <div>
         <div  className='header'  >
-      <a href="#" class="logo"><img src={logoblanc}/></a>
+      <a href="#" className="logo"><img src={logoblanc}/></a>
       <nav>
-        <ul class="menu-items">
-          <li><a href="#" class="menu-item">Acceuil</a></li>
+        <ul className="menu-items">
+          <li><a href="#" className="menu-item">Acceuil</a></li>
           <li>
-            <a href="#" class="menu-item">Informatique</a>
-            <div class="mega-menu">
-              <div class="content">
-              <div class="col">
+            <a href="#" className="menu-item">Informatique</a>
+            <div className="mega-menu">
+              <div className="content">
+              <div className="col">
                   <section>
                   <a href="#" className='categorie-img'><img src={pcportable}/></a>
                   </section>
                 </div>
-                <div class="col">
+                <div className="col">
 
                   <section >
                     <h2>Ordinateur</h2>
-                    <ul class="mega-links">
+                    <ul className="mega-links">
                       <li> 
                         <a href="#">PC portable</a></li>
                       <li><a href="#">PC de bureau</a></li>
@@ -49,10 +49,10 @@ function Navbar() {
                   </section>
                 </div>
                 
-                <div class="col">
+                <div className="col">
                   <section>
                     <h2>Accessoires et Périphériques</h2>
-                    <ul class="mega-links">
+                    <ul className="mega-links">
                       <li><a href="#">Casque & Écouteurs</a></li>
                       <li><a href="#">Souris</a></li>
                       <li><a href="#">Clavier</a></li>
@@ -61,10 +61,10 @@ function Navbar() {
                     </ul>
                   </section>
                 </div>
-                <div class="col">
+                <div className="col">
                   <section>
                     <h2>Composant Informatique</h2>
-                    <ul class="mega-links">
+                    <ul className="mega-links">
                       <li><a href="#">Disque dur </a></li>
                   
                       <li><a href="#">Carte graphique</a></li>
@@ -76,20 +76,20 @@ function Navbar() {
             </div>
           </li>
           <li>
-            <a href="#" class="menu-item">Telephone & Tablette</a>
-            <div class="mega-menu">
-              <div class="content">
-              <div class="col">
+            <a href="#" className="menu-item">Telephone & Tablette</a>
+            <div className="mega-menu">
+              <div className="content">
+              <div className="col">
                   <section>
                   <a href="#" className='categorie-img'><img src={smartphonestablettes}/></a>
                   </section>
                 </div>
-                <div class="col">
+                <div className="col">
 
                   <section >
                     <h2>Téléphone</h2>
 
-                    <ul class="mega-links">
+                    <ul className="mega-links">
                       <li><a href="#">Smartphone</a></li>
                      
                       
@@ -101,10 +101,10 @@ function Navbar() {
                   </section>
                 </div>
                 
-                <div class="col">
+                <div className="col">
                   <section>
                     <h2>Tablette</h2>
-                    <ul class="mega-links">
+                    <ul className="mega-links">
                       <li><a href="#">Tablette</a></li>
                       <li><a href="#">Tablette graphique</a></li>
                    
@@ -118,12 +118,12 @@ function Navbar() {
           </li>
        
           <li>
-            <a href="#" class="menu-item">Blog</a>
-            <div class="mega-menu blog">
-              <div class="content">
-                <div class="col">
-                  <a href="#" class="img-wrapper"
-                    ><span class="img"
+            <a href="#" className="menu-item">Blog</a>
+            <div className="mega-menu blog">
+              <div className="content">
+                <div className="col">
+                  <a href="#" className="img-wrapper"
+                    ><span className="img"
                       ><img
                         src="https://picsum.photos/400?random=2"
                         alt="Random Image" /></span
@@ -134,11 +134,11 @@ function Navbar() {
                     Dolorum vel quae quos culpa! Voluptate ipsum adipisci et
                     quibusdam deserunt quis.
                   </p>
-                  <a href="#" class="read-more">read more...</a>
+                  <a href="#" className="read-more">read more...</a>
                 </div>
-                <div class="col">
-                  <a href="#" class="img-wrapper"
-                    ><span class="img"
+                <div className="col">
+                  <a href="#" className="img-wrapper"
+                    ><span className="img"
                       ><img
                         src="https://picsum.photos/400?random=3"
                         alt="Random Image" /></span
@@ -149,11 +149,11 @@ function Navbar() {
                     Dolorum vel quae quos culpa! Voluptate ipsum adipisci et
                     quibusdam deserunt quis.
                   </p>
-                  <a href="#" class="read-more">read more...</a>
+                  <a href="#" className="read-more">read more...</a>
                 </div>
-                <div class="col">
-                  <a href="#" class="img-wrapper"
-                    ><span class="img"
+                <div className="col">
+                  <a href="#" className="img-wrapper"
+                    ><span className="img"
                       ><img
                         src="https://picsum.photos/400?random=4"
                         alt="Random Image" /></span
@@ -164,12 +164,12 @@ function Navbar() {
                     Dolorum vel quae quos culpa! Voluptate ipsum adipisci et
                     quibusdam deserunt quis.
                   </p>
-                  <a href="#" class="read-more">read more...</a>
+                  <a href="#" className="read-more">read more...</a>
                 </div>
               </div>
             </div>
           </li>
-          <li><a href="#" class="menu-item">About</a></li>
+          <li><a href="#" className="menu-item">About</a></li>
         </ul>
       </nav>
     </div>

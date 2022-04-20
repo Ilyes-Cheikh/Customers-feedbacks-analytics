@@ -7,13 +7,74 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+<<<<<<< HEAD:frontend/src/Pages/Admin_Interface/Stat.js
 import PieChart from '../../Components/Pie';
 import LineChart from '../../Components/LineChart';
 import BarChart from '../../Components/BarChart';
 import DoughnutChart from '../../Components/DoughnutChart';
 import StatCard from '../../Components/StatCard';
 import "../../Assets/CSS/stat.css";
+=======
+import PieChart from '../Components/Pie';
+import LineChart from '../Components/LineChart';
+import BarChart from '../Components/BarChart';
+import DoughnutChart from '../Components/DoughnutChart';
+import StatCard from '../Components/StatCard';
+import "../Assets/CSS/stat.css";
+import "../Assets/CSS/root.css";
+import { useState,useEffect } from 'react';
+import Axios from 'axios';
+>>>>>>> 34ae49ec8fe088585389c5c7c3b2bf0ac6ee63d4:frontend/src/Pages/Stat.js
 
+
+
+function Stat() {
+  const [detailachats,setDetailachats] = useState([])
+  const [achats,setAchats] = useState([])
+  const [users,setUsers] = useState([])
+
+
+  useEffect(() => {
+    let unmounted = false
+    if (!unmounted) {
+        Axios.get("http://localhost:5000/detailachat/getall").then(
+            (data) => {
+                console.log(data)
+                setDetailachats(data.data)
+            }
+        )
+    }
+    return () => { unmounted = true }
+  }, [])
+  useEffect(() => {
+    let unmounted = false
+    if (!unmounted) {
+        Axios.get("http://localhost:5000/achat/get").then(
+            (data) => {
+                console.log(data)
+                setAchats(data.data)
+            }
+        )
+    }
+    return () => { unmounted = true }
+  }, [])
+  useEffect(() => {
+    let unmounted = false
+    if (!unmounted) {
+        Axios.get("http://localhost:5000/user/get").then(
+            (data) => {
+                console.log(data)
+                setUsers(data.data)
+            }
+        )
+    }
+    return () => { unmounted = true }
+  }, [])
+  var nombreusers=users.length
+  var totalrevenue = 0
+  var nombreachat=achats.length
+  const key1 = detailachats.map(detailachat => totalrevenue+=detailachat.prix_produit);
+  console.log("total",nombreachat)
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 const data1 = {
@@ -65,8 +126,8 @@ const data3 = {
   ],
 };
 
-function Stat() {
-  return (
+  
+return (
     <div>
       
       <div className="box">
@@ -80,11 +141,11 @@ function Stat() {
           </Typography>
           
           <Typography sx={{ fontSize: 60  }} align="center" color="var(--rouge)" component="div" >
-        10
+        {totalrevenue.toString()} DT
         
       </Typography>
-      <Typography sx={{ fontSize: 15  }} align="center" color="var(--blue-marine)" component="div" >
-        <i class="bi bi-arrow-up-circle-fill">{"25"}%</i>
+      <Typography sx={{ fontSize: 15  }} align="center" color="#029688" component="div" >
+        <i className="bi bi-arrow-up-circle-fill">{"25"}%</i>
         </Typography>
         
       
@@ -102,12 +163,12 @@ function Stat() {
         Nombre d'achats
       </Typography>
 
-      <Typography sx={{ fontSize: 80  }} align="center" color="var(--vert)" component="div">
+      <Typography sx={{ fontSize: 60  }} align="center" color="var(--vert)" component="div">
 
-        10
+        {nombreachat}
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="var(--rouge)" component="div" >
-        <i class="bi bi-arrow-down-circle-fill">{"20"}%</i>
+        <i className="bi bi-arrow-down-circle-fill">{"20"}%</i>
         </Typography>
     
     <StatCard dd={data2}/>
@@ -120,10 +181,10 @@ function Stat() {
         Nombre d'abonnés
       </Typography>
       <Typography sx={{ fontSize: 60  }} align="center" color="var(--blue-ciel)" component="div">
-        10
+        {nombreusers}
       </Typography>
-      <Typography sx={{ fontSize: 15  }} align="center" color="var(--blue-marine)" component="div" >
-        <i class="bi bi-arrow-up-circle-fill">{"50"}%</i>
+      <Typography sx={{ fontSize: 15  }} align="center" color="#029688" component="div" >
+        <i className="bi bi-arrow-up-circle-fill">{"50"}%</i>
         </Typography>
       
     

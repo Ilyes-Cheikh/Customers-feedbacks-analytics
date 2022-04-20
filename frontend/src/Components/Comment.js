@@ -8,7 +8,12 @@ const imgLink =
 
 function Comment() {
   return (
+<<<<<<< HEAD
     <div style={{ padding: 14, opacity: "0.8" }} className="App" >
+=======
+    <div style={{ padding: 14,opacity:"0.8" }} className="App" >
+      <h1 style={{marginRight: "400px"}}> Comments </h1>
+>>>>>>> 34ae49ec8fe088585389c5c7c3b2bf0ac6ee63d4
       <Paper style={{ padding: "40px 20px" }}>
         <Grid container wrap="wrap" spacing={2}>
           <Grid item>
@@ -124,6 +129,7 @@ function Comment() {
             </p>
           </Grid>
         </Grid>
+<<<<<<< HEAD
         <Divider variant="fullWidth" style={{ margin: "10px 0px 20px", background: 'black' }} />
         <div style={{ display: "flex", alignItems: "end" }}>
           <TextField id="filled-basic" label="Ecrire un commentaire" variant="standard"
@@ -135,6 +141,19 @@ function Comment() {
           />
           <Button style={{ marginBottom: "0.89%" }}  >
             <i class="bi bi-send"></i>
+=======
+        <Divider variant="fullWidth" style={{ margin: "10px 0px 20px",background: 'black'}}  />
+        <div style={{display:"flex",alignItems:"end"}}>
+        <TextField id="filled-basic" label="Ecrire un commentaire" variant="standard"
+                      style={{ width: "100%" }}
+                      multiline={true}
+                      rows={1}
+                      rowsMax={10}
+                      margin="normal"
+                    />
+          <Button style={{marginBottom:"0.89%"}}  >
+          <i  className="bi bi-send"></i>
+>>>>>>> 34ae49ec8fe088585389c5c7c3b2bf0ac6ee63d4
           </Button>
         </div>
       </Paper>

@@ -74,9 +74,9 @@ const SideMenu = (props) => {
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (
-            <i class="bi bi-arrow-right-square-fill"></i>
+            <i className="bi bi-arrow-right-square-fill"></i>
           ) : (
-            <i class="bi bi-arrow-left-square-fill"></i>
+            <i className="bi bi-arrow-left-square-fill"></i>
           )}
         </div>
       </div>
@@ -101,6 +101,30 @@ const SideMenu = (props) => {
               }}
             />
           ))}
+<<<<<<< HEAD
+=======
+
+          {/* <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i className="bi bi-speedometer2"></i>
+              </div>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <MenuItem
+            name={"Content"}
+            subMenus={[{ name: "Courses" }, { name: "Videos" }]}
+          />
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i className="bi bi-vector-pen"></i>
+              </div>
+              <span>Design</span>
+            </a>
+          </li> */}
+>>>>>>> 34ae49ec8fe088585389c5c7c3b2bf0ac6ee63d4
         </ul>
       </div>
     </div>

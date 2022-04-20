@@ -24,6 +24,7 @@ export default function OneProductPage() {
 
   return (
     <div className="one_product_container">
+<<<<<<< HEAD
       <Navbar />
       <div class="product_card">
         <div className="p_c_wrapper">
@@ -53,12 +54,39 @@ export default function OneProductPage() {
             </div>
           </div>
 
+=======
+      <div className="product_card">
+        <div className="thumbnail"><img className="left" src={`/uploads/${produit.image}`}  /></div>
+        <div className="right">
+          <div className="right_title"> {produit.nom_produit} </div>
+          <div className="centred">
+            
+          </div>
+          <div className="separator"></div>
+          <p className="parag">{produit.description}</p>
+       
+  <div classNAme="buy_button">
+  
+          <Button variant="outline-danger" size="lg">Acheter</Button>
+        </div>       
+>>>>>>> 34ae49ec8fe088585389c5c7c3b2bf0ac6ee63d4
         </div>
       </div>
       <div className="comments_space_container">
         <div className="comments_space">
           <Comment />
         </div>
+<<<<<<< HEAD
+=======
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+       <Comment/>
+        
+
+>>>>>>> 34ae49ec8fe088585389c5c7c3b2bf0ac6ee63d4
       </div>
       <Footer />
     </div>
