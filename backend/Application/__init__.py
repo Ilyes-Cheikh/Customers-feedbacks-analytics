@@ -5,7 +5,7 @@ import datetime
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
-
+from datetime import datetime, timedelta, timezone
 from flask_jwt_extended import JWTManager
 
 
@@ -22,9 +22,10 @@ def create_app():
 
         app = Flask(__name__)
         app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:ilyes11071999@localhost/PCD'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:ilyes11071999@localhost/pcd'
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         app.config["JWT_SECRET_KEY"] = "pcd"
+        app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=24)
         db.init_app(app)
         ma.init_app(app)
         cors.init_app(app)
@@ -48,7 +49,7 @@ def create_app():
 
         @app.route('/')
         def index():
-                 return(" hello new  world")
+                 return("This Server is running correctly !")
  
         return app
 

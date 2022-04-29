@@ -190,3 +190,44 @@
 .categorie-img img:hover{
   transform:scale(1.1) ;
 }
+
+.SignButton{
+  width: 220px !important;
+
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: var(--rouge);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.SignButtonDiv{
+  margin-left:  650px !important;
+  
+}
+.LogoutButton{
+  width: 200px;
+  margin-left: 650px !important;
+  height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: var(--rouge);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}

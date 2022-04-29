@@ -1,6 +1,6 @@
-import im1 from '../Assets/im1.jpg';
-import im2 from '../Assets/im2.jpg';
-import im3 from '../Assets/im3.jpg';
+import im1 from '../Assets/images/im1.jpg';
+import im2 from '../Assets/images/im2.jpg';
+import im3 from '../Assets/images/im3.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 import '../Assets/CSS/slider.css';
 

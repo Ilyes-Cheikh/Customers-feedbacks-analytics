@@ -1,89 +1,72 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: Poppins;
+}
+
+.one_product_container {
+  width: 100%;
+  height: auto;
+}
 
 .product_card {
-  position: relative;
-  height: auto;
-  width: 70%;
-  margin: 10% auto;
-  background-color: lightgray;
-  padding-right: 2%;
-}
-
-.one_product_container{
-  width: 100%;
-  height: auto;
-  padding-top: 5%;
-}
-
-.thumbnail {
-  float: left;
-  position: relative;
-  left: 30px;
-  top: -40px;
-  height: auto;
-  width: 53%;
-  -webkit-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.75);
-  overflow: hidden; }
-
-img.left {
   height: auto;
   width: 100%;
+  padding-top : 10% ;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+
 }
 
-.right {
-  margin-left: 60%;
+.p_c_wrapper {
+  width: 950px;
+  height: auto;
+  display: flex;
+  border: solid lightgray 1px;
+  padding: 2%;
+  border-radius: 20px;
+  background-color: white;
 }
 
-.right_title {
-  padding-top: 15px;
-  font-size: 1.6rem;
-  color: #4B4B4B; }
-.centred{
+.p_c_left_part {
+  width: 40%;
+  height: inherit;
+  display: table;
+}
+
+.r_prod_desc {
   width: 100%;
-  display:flex;
+  display: block;
+}
+
+.prod_desc_price_button {
+  display: flex;
+  width: 100%;
+}
+
+.prod_desc_price {
+  color: #06a9f8;
+  font-size: 30px;
+  width: auto;
+}
+
+.prod_desc_buy{
+  display : block;
+  width: 80%;
+  text-align: center;
+  color : gray;
+}
+
+.comments_space_container{
+  width : 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 5%;
 }
-.marque {
-  background-color: #9ECAFF;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 20px; }
-
-.la_marque {
-  text-align: center;
-  font-size: 1.3rem; }
-
-.separator {
-  margin-top: 10px;
-  border: 1px solid #C3C3C3; }
-
-.parag {
-  text-align: justify;
-  padding-top: 10px;
-  font-size: 1rem;
-  line-height: 150%;
-  color: #4B4B4B; }
-
-.the_price {
-  font-size: 3rem;
-  color: darkred; 
-  position: absolute;
-
-  
-  margin-top: 3%;
-  margin-left:545px;
-
-}
-
-.price_space{
-  position: relative;
-  width: 100%;
-  height: 100px;
-  padding-left: 20%;
+.comments_space{
+  width:80%;
+  background-color: lightgray;
+  border-radius: 10px;
 }

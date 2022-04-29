@@ -14,7 +14,7 @@ export default function Pagination(props){
     const data = res.data;
               const slice = data.slice(offset, offset + perPage)
               const postData = slice.map((data, key) =>
-                            <Card id_produit={data.id_produit} nom_produit={data.nom_produit} description={data.description} image={data.image} prix_produit={data.prix_produit} />
+                            <Card nom_produit={data.nom_produit} id_produit={data.id_produit} description={data.description} image={data.image} prix_produit={data.prix_produit} />
 
                     )
                  
@@ -31,7 +31,6 @@ useEffect(() => {
     getData()
   }, [offset])  
    
- 
     return(
         <div className='pagination_container'>
              <div className='prod'>

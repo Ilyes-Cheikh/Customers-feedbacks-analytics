@@ -1,6 +1,7 @@
 .categoryPageContainer{
     width: 100%;
     height: auto;
+    font-family: Poppins;
 }
 
 .tab_panel_container{
@@ -19,12 +20,15 @@
     color: black!important;
     background-color: lightgray !important;
     font-size: 1.3rem !important;
+    width:100% !important;
 
   }
 
   .nav-link{
     color: black!important;
     font-size: 1.3rem !important;
+    width:100% !important;
+
 
   }
 

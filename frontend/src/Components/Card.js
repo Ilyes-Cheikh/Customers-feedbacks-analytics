@@ -15,7 +15,7 @@ export default function Card(props) {
               </div>
               <div className="items boutton">
               <a  href={`http://localhost:3000/produits/${props.id_produit}`}  target='_blank'>
-                <Button className="card_button" variant="succes"  >Read more </Button>
+                <Button className="card_button" variant="light"  >Read more </Button>
                 </a>
               </div>  
             </div>

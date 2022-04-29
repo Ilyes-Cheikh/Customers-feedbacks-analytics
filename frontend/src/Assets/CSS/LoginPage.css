@@ -7,16 +7,17 @@
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
 	background:var(--white);
+	font-family: Poppins;
 }
 .main{
-	width: 600px;
-	height:630px;
+	width: 700px;
+	height:700px;
 	background: red;
 	overflow: hidden;
 	background: linear-gradient(to bottom, var(--vert),var(--blue-ciel));
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
-	margin-top: 65px;
+
 }
 #chk{
 	display: none;
@@ -48,7 +49,7 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
-button{
+.loginButton{
 	width: 60%;
 	height: 40px;
 	margin: 10px auto;
@@ -65,11 +66,11 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
+.loginButton:hover{
 	background: var(--blue-ciel);
 }
 .login{
-	height: 600px;
+	height: 650px;
 	background: #eee;
 	border-radius: 60% / 10%;
 	transform: translateY(-180px);
@@ -81,7 +82,7 @@ button:hover{
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-630px);
+	transform: translateY(-700px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	

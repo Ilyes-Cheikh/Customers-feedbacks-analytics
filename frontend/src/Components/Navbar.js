@@ -1,10 +1,20 @@
 import {React , useState}  from 'react'
 import "../Assets/CSS/Navbar.css"
-import logobleu from "../Assets/logobluelow.png"
-import logoblanc from "../Assets/logowhite.png"
-import pcportable from "../Assets/materiels_maint.png"
-import smartphonestablettes from"../Assets/smartphones-tablettes.png"
+import logobleu from "../Assets/images/logobluelow.png"
+import logoblanc from "../Assets/images/logowhite.png"
+import pcportable from "../Assets/images/materiels_maint.png"
+import smartphonestablettes from"../Assets/images/smartphones-tablettes.png"
+import {Link}  from "react-router-dom"
+import useToken from './useToken'
+import axios from 'axios'
+import { useHistory } from 'react-router-dom';
+import ManageUser from './ManageUser'
+import Swal from 'sweetalert2'
 function Navbar() {
+  let history = useHistory()
+  const { token, removeToken, setToken } = useToken();
+  const{getUser, saveUser, removeUser} = ManageUser()
+    const user=getUser()
   const [charger, setCharger] = useState(false)
     const handleCharger = (val)=>{
         setCharger(val)
@@ -18,6 +28,50 @@ function Navbar() {
           setMoved(false)
       }
   })
+
+  function logOut() {
+    Swal.fire({
+      title: 'Voulez vous vraiment vous déconnecter?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios({
+          method: "POST",
+          url:"http://localhost:5000/logout",
+        })
+        .then((response) => {
+          
+          console.log(response.data)
+          console.log(token)
+          Swal.fire({
+          
+            title: "Vous ête déconnecté(e) avec succès !",
+            icon: "success"
+           } )
+          history.push('/')
+        }).catch((error) => {
+          if (error.response) {
+            console.log(error.response)
+            console.log(error.response.status)
+            console.log(error.response.headers)
+            Swal.fire(
+              'Erreur!',
+              'une erreur est survenue',
+              'Erreur'
+            )
+            }
+        })
+      removeToken()
+       
+      }
+    })
+   
+  }
   return (
     <div>
         <div  className='header'  >
@@ -117,61 +171,22 @@ function Navbar() {
             </div>
           </li>
        
-          <li>
-            <a href="#" className="menu-item">Blog</a>
-            <div className="mega-menu blog">
-              <div className="content">
-                <div className="col">
-                  <a href="#" className="img-wrapper"
-                    ><span className="img"
-                      ><img
-                        src="https://picsum.photos/400?random=2"
-                        alt="Random Image" /></span
-                  ></a>
-                  <h2>Title</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Dolorum vel quae quos culpa! Voluptate ipsum adipisci et
-                    quibusdam deserunt quis.
-                  </p>
-                  <a href="#" className="read-more">read more...</a>
-                </div>
-                <div className="col">
-                  <a href="#" className="img-wrapper"
-                    ><span className="img"
-                      ><img
-                        src="https://picsum.photos/400?random=3"
-                        alt="Random Image" /></span
-                  ></a>
-                  <h2>Title</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Dolorum vel quae quos culpa! Voluptate ipsum adipisci et
-                    quibusdam deserunt quis.
-                  </p>
-                  <a href="#" className="read-more">read more...</a>
-                </div>
-                <div className="col">
-                  <a href="#" className="img-wrapper"
-                    ><span className="img"
-                      ><img
-                        src="https://picsum.photos/400?random=4"
-                        alt="Random Image" /></span
-                  ></a>
-                  <h2>Title</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Dolorum vel quae quos culpa! Voluptate ipsum adipisci et
-                    quibusdam deserunt quis.
-                  </p>
-                  <a href="#" className="read-more">read more...</a>
-                </div>
-              </div>
-            </div>
-          </li>
+       
           <li><a href="#" className="menu-item">About</a></li>
+         
         </ul>
       </nav>
+      {!token && token!=="" &&token!== undefined? 
+      <div className="SignButtonDiv">
+      <Link  to="/login">
+      <button className='SignButton' >  Se connecter / S'inscrire  </button>
+     </Link>
+      </div> :
+      <div>
+         <button className='LogoutButton'   onClick={logOut}> Déconnexion  </button>
+      </div>
+      
+      }
     </div>
     </div>
   )
