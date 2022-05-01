@@ -14,7 +14,10 @@ export default function Pagination(props){
     const data = res.data;
               const slice = data.slice(offset, offset + perPage)
               const postData = slice.map((data, key) =>
+
                             <Card nom_produit={data.nom_produit} id_produit={data.id_produit} description={data.description} image={data.image} prix_produit={data.prix_produit} />
+
+
 
                     )
                  

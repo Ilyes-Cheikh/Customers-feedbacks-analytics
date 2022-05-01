@@ -45,13 +45,12 @@ function App() {
           <OneProductPage />
         </Route>
         <Route exact path="/login">
-          {!token && token!=="" &&token!== undefined? 
-          <LoginPage setToken={setToken} /> : (
-           <ProfilePage token={token} setToken={setToken}/>
-       
-          )
-  }
-        </Route>
+        <LoginPage setToken={setToken} />
+      </Route>
+      <Route exact path="/profile">
+      <ProfilePage/>
+      </Route>
+
       </Router>
 
     </div>

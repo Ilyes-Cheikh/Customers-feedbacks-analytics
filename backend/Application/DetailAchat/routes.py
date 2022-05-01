@@ -5,10 +5,7 @@ from Application.__init__ import db
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-engine = create_engine('mysql+pymysql://root:123456@localhost/PCD')
 
-Session = sessionmaker(engine)
-session = Session()
 
 #Creating the blueprint
 detailachat = Blueprint('detailachat',__name__)

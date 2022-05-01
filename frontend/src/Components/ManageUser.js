@@ -1,25 +1,48 @@
 import { useState , useEffect} from 'react';
 import axios from 'axios';
 function ManageUser() {
+            
+        
+        
 
   
-  function getUser(){
-    var user = JSON.parse(localStorage.getItem('user'))
+  function saveUser(token){
+    axios({
+        method: "GET",
+        url: "http://localhost:5000/profile",
+        headers: {
+            Authorization: 'Bearer ' + token
+        }
+    })
+        .then((response) => {
+            const res = response.data
+            console.log(res)
+            localStorage.setItem('currentUser', JSON.stringify(res))
+            
+            
+
+        }).catch((error) => {
+            if (error.response) {
+                console.log(error.response)
+                console.log(error.response.status)
+                console.log(error.response.headers)
+            }
+        })
+    }
+    function getCurrentUser(){
+    var user = JSON.parse(localStorage.getItem('currentUser'))
     return user
   }
 
-  function saveUser(user) {
-    localStorage.setItem('user', JSON.stringify(user))
-
-  };
+  
 
   function removeUser() {
-    localStorage.removeItem("user");
+    localStorage.removeItem("currentUser");
     ;
   }
 
   return {
-    getUser,
+    getCurrentUser,
     saveUser,
     removeUser
   }

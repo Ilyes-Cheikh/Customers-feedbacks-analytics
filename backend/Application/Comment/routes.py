@@ -1,8 +1,9 @@
 from flask import Blueprint,jsonify,request,Response,json
-from Application.models import Comment,comment_schema,comments_schema
+from Application.models import Comment,comment_schema,comments_schema,User,commentjoinusers_schema
 from Application.__init__ import db,bcrypt
 import pickle 
 from Application.Comment.utils import predict
+
 
 #Creating the blueprint
 comment = Blueprint('comment',__name__)
@@ -26,10 +27,7 @@ def get_comments_by_idproduit(id):
 import json
 
 
-@comment.route('/comment/get/byuserid/<user_id>' , methods=['GET'])
-def get_comment_by_iduser(user_id):
-    comments_to_get = Comment.query.filter_by(user_id=user_id)
-    return comments_schema.jsonify(comments_to_get)
+
   
 @comment.route('/comment/getbyproduit/<id_produit>', methods =['GET'])
 def get_comments_by_produit(id_produit):
@@ -65,3 +63,12 @@ def update_comment(id):
     return comment_schema.jsonify(comment_to_update)
 
 
+
+@comment.route('/comment/get/joinuser/<id_produit>', methods=['GET'] )
+def get_commentjoinuser_byidproduit(id_produit):
+    comments = Comment.query.join(User, Comment.user_id == User.user_id)\
+                                .add_columns(Comment.comment_id,Comment.comment_text,Comment.user_id, User.username, User.email)\
+                                .all()
+
+    results = commentjoinusers_schema.dump(comments)
+    return jsonify(results)

@@ -70,6 +70,7 @@ class User (db.Model):
     achats = db.relationship('Achat', backref='User')    
     
 
+
     def __init__ (self,username,email,password,address,mobile):
         self.username=username
         self.email = email
@@ -154,3 +155,11 @@ class JoinDetailAchatSchema(ma.Schema):
         fields = ('detailachat_id','achat_id', 'quantite','id_produit',"date_Achat","prix_Total_Achat","nom_produit","user_id","prix_produit")
 joindetailachat_schema = JoinDetailAchatSchema()
 joindetailachats_schema = JoinDetailAchatSchema(many=True)
+
+
+
+class CommentJoinUserSchema(ma.Schema):
+    class Meta:
+        fields = ('comment_id', 'comment_text','comment_label', 'produit_id', 'user_id' , 'username', 'email', 'password','address','mobile')
+commentjoinuser_schema = CommentJoinUserSchema()
+commentjoinusers_schema = CommentJoinUserSchema(many=True)

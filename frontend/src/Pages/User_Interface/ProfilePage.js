@@ -3,37 +3,10 @@ import axios from "axios"
 import '../../Assets/CSS/Profilepage.css'
 import userimg from '../../Assets/images/user.jpg'
 import ManageUser from "../../Components/ManageUser"
-export default function ProfilePage(props) {
-    const {getUser, saveUser , removeUser} = ManageUser()
-    const [currentUser, setCurrentUser] = useState({})
-        useEffect(() => {
-        let unmounted = false
-        if (!unmounted) {
-            axios({
-                method: "GET",
-                url: "http://localhost:5000/profile",
-                headers: {
-                    Authorization: 'Bearer ' + props.token
-                }
-            })
-                .then((response) => {
-                    const res = response.data
-                    console.log(res)
-                    res.access_token && props.setToken(res.access_token)
-                    setCurrentUser(res)
-                    saveUser(res)
-
-                }).catch((error) => {
-                    if (error.response) {
-                        console.log(error.response)
-                        console.log(error.response.status)
-                        console.log(error.response.headers)
-                    }
-                })
-        }
-        return () => { unmounted = true }
-    }, [])
-
+export default function ProfilePage() {
+    const {getCurrentUser, saveUser , removeUser} = ManageUser()
+        const currentUser = getCurrentUser()
+        
     return (
         <div className="profilepage">
             <div className="profile">

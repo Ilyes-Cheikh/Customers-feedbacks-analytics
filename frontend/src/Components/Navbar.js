@@ -13,8 +13,8 @@ import Swal from 'sweetalert2'
 function Navbar() {
   let history = useHistory()
   const { token, removeToken, setToken } = useToken();
-  const{getUser, saveUser, removeUser} = ManageUser()
-    const user=getUser()
+  const{getCurrentUser, saveUser, removeUser} = ManageUser()
+  
   const [charger, setCharger] = useState(false)
     const handleCharger = (val)=>{
         setCharger(val)
@@ -40,6 +40,9 @@ function Navbar() {
       cancelButtonText: 'Annuler'
     }).then((result) => {
       if (result.isConfirmed) {
+
+        removeToken()
+        removeUser()
         axios({
           method: "POST",
           url:"http://localhost:5000/logout",
@@ -66,7 +69,7 @@ function Navbar() {
             )
             }
         })
-      removeToken()
+      
        
       }
     })
@@ -176,7 +179,7 @@ function Navbar() {
          
         </ul>
       </nav>
-      {!token && token!=="" &&token!== undefined? 
+      {token==null ? 
       <div className="SignButtonDiv">
       <Link  to="/login">
       <button className='SignButton' >  Se connecter / S'inscrire  </button>

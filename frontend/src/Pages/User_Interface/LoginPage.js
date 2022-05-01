@@ -1,11 +1,16 @@
+
 import React,{useState,useEffect}from "react"
 import '../../Assets/CSS/LoginPage.css'
 import { useHistory } from 'react-router-dom';
 import ManageUser from "../../Components/ManageUser";
 import axios  from "axios"
 import Swal from 'sweetalert2'
+
+
 export default function LoginPage(props) {
 
+    let history = useHistory()
+    //States
     const [username,setUsername]=useState("")
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
@@ -14,11 +19,13 @@ export default function LoginPage(props) {
     const[loginemail,setLoginemail]= useState("")
     const [loginpassword, setLoginpassword] = useState("")
 
+    //User Manager
+    const {getCurrentUser, saveUser, removeUser} = ManageUser()
 
 
-    let history = useHistory()
-    const token = localStorage.getItem('token')
-  //Register Form Handlers
+   
+    
+    //Register Form Handlers
 
     const handleUsernameChange = (e) =>{
         setUsername(e.target.value)
@@ -73,7 +80,7 @@ export default function LoginPage(props) {
               })
         });
     }
-    //getting the token
+    
     
 
     //User Login Handler
@@ -93,6 +100,7 @@ export default function LoginPage(props) {
             console.log("succes")
             console.log(response.data)
             props.setToken(response.data.access_token)
+            saveUser(response.data.access_token)
             Swal.fire({
                
                 icon: 'success',

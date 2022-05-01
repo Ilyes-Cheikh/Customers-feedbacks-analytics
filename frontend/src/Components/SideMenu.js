@@ -101,6 +101,7 @@ const SideMenu = (props) => {
               }}
             />
           ))}
+
         </ul>
       </div>
     </div>
