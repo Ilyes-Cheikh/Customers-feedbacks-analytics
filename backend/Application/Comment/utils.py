@@ -1,8 +1,8 @@
 import pickle 
 
-f = open(r'C:\Users\Ilyes\Desktop\PCD\backend\Application\Comment\model.pkl' , 'rb')   
+f = open(r'C:\Users\Ilyes\Desktop\PCD\backend\IA\model.pkl' , 'rb')   
 model = pickle.load(f)
-c = open(r'C:\Users\Ilyes\Desktop\PCD\backend\Application\Comment\vectorizer.pkl' , 'rb')
+c = open(r'C:\Users\Ilyes\Desktop\PCD\backend\IA\vectorizer.pkl' , 'rb')
 vectorizer = pickle.load(c)
 
 def predict(text):

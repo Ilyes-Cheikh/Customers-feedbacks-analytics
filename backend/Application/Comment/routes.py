@@ -1,7 +1,6 @@
 from flask import Blueprint,jsonify,request,Response,json
 from Application.models import Comment,comment_schema,comments_schema,User,commentjoinusers_schema
 from Application.__init__ import db,bcrypt
-import pickle 
 from Application.Comment.utils import predict
 
 
