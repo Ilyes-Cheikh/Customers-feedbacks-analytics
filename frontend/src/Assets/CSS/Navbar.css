@@ -210,12 +210,12 @@
 	cursor: pointer;
 }
 .SignButtonDiv{
-  margin-left:  650px !important;
+  margin-left:  400px !important;
   
 }
 .LogoutButton{
   width: 200px;
-  margin-left: 650px !important;
+  margin-left: 600px !important;
   height: 40px;
 	margin: 10px auto;
 	justify-content: center;

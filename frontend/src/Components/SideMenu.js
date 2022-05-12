@@ -18,7 +18,7 @@ export const menuItems = [
     component:Stat,
   },
   {
-    name: "Product",
+    name: "Produits",
     exact: true,
     to: `/admin/content`,
     iconClassName: "bi bi-box-seam",

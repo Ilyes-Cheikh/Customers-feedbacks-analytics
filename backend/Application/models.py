@@ -40,12 +40,12 @@ class Produit (db.Model):
 
 
 
-    def __init__ (self, nom_produit, description, image, categorie_id, prix_produit, stock):
+    def __init__ (self, nom_produit, description, image, categorie_id, prix, stock):
         self.nom_produit = nom_produit
         self.description= description
         self.image = image
         self.categorie_id = categorie_id
-        self.prix_produit= prix_produit
+        self.prix_produit= prix
         self.stock = stock
       
 class ProduitSchema(ma.Schema):

@@ -83,7 +83,7 @@ function Navbar() {
         <ul className="menu-items">
           <li><a href="#" className="menu-item">Acceuil</a></li>
           <li>
-            <a href="#" className="menu-item">Informatique</a>
+            <a href="#" className="menu-item">Accéssoire et périphérique</a>
             <div className="mega-menu">
               <div className="content">
               <div className="col">
@@ -175,7 +175,7 @@ function Navbar() {
           </li>
        
        
-          <li><a href="#" className="menu-item">About</a></li>
+          <li><a href="#" className="menu-item">Composant informatique</a></li>
          
         </ul>
       </nav>

@@ -93,28 +93,22 @@ const defaultProps = {
                   </div>
                   <div className="col-xl-4 col-lg-4 col-md-6 mb-30 ">
                       <div className="footer-widget">
-                          <div className="footer-widget-heading">
-                              <h3>Useful Links</h3>
-                          </div>
+                         
                           <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">about</a></li>
-                              <li><a href="#">services</a></li>
-                              <li><a href="#">portfolio</a></li>
-                              <li><a href="#">Contact</a></li>
-                              <li><a href="#">About us</a></li>
-                              <li><a href="#">Our Services</a></li>
-                              <li><a href="#">Expert Team</a></li>
-                              <li><a href="#">Contact us</a></li>
-                              <li><a href="#">Latest News</a></li>
+                              <li><a href="#">Acceuil</a></li>
+                              <li><a href="#">Accéssoire et périphérique</a></li>
+                              <li><a href="#">Ordinateur</a></li>
+                              <li><a href="#">Téléphone</a></li>
+                              <li><a href="#">Tablette</a></li>
+                              <li><a href="#">Composant informatique</a></li>
                           </ul>
                       </div>
                   </div>
                   <div className="col-xl-4 col-lg-4 col-md-6 mb-50" >
                       <div className="footer-widget">
-                      <div className="footer-widget-heading">
-                              <h3>Find us</h3>
-                              <p>Campus Universitaire de la Manouba، Manouba 2010</p>
+                      <div className >
+                              <h3 style={{color:'white'}}>Trouvez-nous</h3>
+                              <p style={{color:'white'}}>Campus Universitaire de la Manouba، Manouba 2010</p>
                           </div>
                       <div className='map'>
                           

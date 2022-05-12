@@ -21,8 +21,8 @@ def get_users():
 
 
 @user.route('/user/get/<id>' , methods =['GET'])
-def get_user_by_id(id):
-    user=User.query.get(id)
+def get_userbyId(id):
+    user=User.query.get(id) 
     return user_schema.jsonify(user)
 
 @user.route('/user/register' , methods=['POST' , 'GET'])
@@ -39,7 +39,7 @@ def add_user():
             user_to_add = User(username=username,email=email,password=hashed_password,address=address,mobile=mobile)
             db.session.add(user_to_add)
             db.session.commit()
-            return user_schema.jsonify(user_to_add) 
+            return ("Cet utilisateur a été ajouté avec succès !")
     elif existing_username and existing_email is None:
         return jsonify({"erreur" :"Le nom d'utilisateur existe déjà !"}) , 401
     elif existing_email and existing_username is None:

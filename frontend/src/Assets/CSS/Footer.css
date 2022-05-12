@@ -56,6 +56,7 @@ ul {
 }
 .footer-logo img {
     max-width: 200px;
+    margin-left:130px;
 }
 .footer-text p {
   margin-bottom: 14px;
@@ -71,6 +72,7 @@ ul {
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
+  margin-left: 150px;
 }
 .footer-social-icon a {
   color: #fff;
@@ -86,6 +88,7 @@ ul {
 }
 .facebook-bg{
   background: #3B5998;
+  margin-left: 120px;
 }
 .twitter-bg{
   background: #55ACEE;

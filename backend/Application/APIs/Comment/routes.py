@@ -1,7 +1,7 @@
 from flask import Blueprint,jsonify,request,Response,json
 from Application.models import Comment,comment_schema,comments_schema,User,commentjoinusers_schema
 from Application.__init__ import db,bcrypt
-from Application.Comment.utils import predict
+from Application.APIs.Comment.utils import predict
 
 
 #Creating the blueprint
@@ -15,7 +15,7 @@ def get_comments():
 
 
 @comment.route('/comment/get/byidproduit/<id>', methods =['GET'])
-def get_comments_by_idproduit(id):
+def get_stat_by_idproduit(id):
     total_number_of_comments= len(Comment.query.filter_by(produit_id = id).all())
     number_of_positive_comments = len(Comment.query.filter_by(produit_id = id , comment_label = "positive").all())
     if total_number_of_comments != 0 : 
@@ -29,7 +29,7 @@ import json
 
   
 @comment.route('/comment/getbyproduit/<id_produit>', methods =['GET'])
-def get_comments_by_produit(id_produit):
+def get_comments_by_idproduit(id_produit):
     comments_to_get = Comment.query.filter_by(produit_id=id_produit)
     return comments_schema.jsonify(comments_to_get)
 
@@ -63,8 +63,8 @@ def update_comment(id):
 
 
 
-@comment.route('/comment/get/joinuser/<id_produit>', methods=['GET'] )
-def get_commentjoinuser_byidproduit(id_produit):
+@comment.route('/comment/get/joinuser/<id>', methods=['GET'] )
+def get_commentjoinuser_byidproduit(id):
     comments = Comment.query.join(User, Comment.user_id == User.user_id)\
                                 .add_columns(Comment.comment_id,Comment.comment_text,Comment.user_id, User.username, User.email)\
                                 .all()

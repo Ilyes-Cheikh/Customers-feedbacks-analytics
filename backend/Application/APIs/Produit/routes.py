@@ -3,7 +3,7 @@ import os
 from sqlalchemy import select
 from Application.__init__ import db,UPLOAD_FOLDER
 from Application.models import produit_schema,produits_schema,Produit
-from Application.Produit.utils import allowed_file
+from Application.APIs.Produit.utils import allowed_file
 from werkzeug.utils import secure_filename
 
 #Creating the blueprint
@@ -19,13 +19,13 @@ def get_produits():
 
 
 @produit.route('/produit/get/<id>' , methods = ['GET'])
-def get_produit(id):
+def get_produitbyId(id):
     produit_to_get = Produit.query.get(id)
     return produit_schema.jsonify(produit_to_get)
 
 
 @produit.route('/produit/getbycategorie/<cat_id>' , methods = ['GET'])
-def get_produit_bycategorie(cat_id):
+def get_produitbyCategorie(cat_id):
     produits_to_get = Produit.query.filter_by(categorie_id=cat_id)
     return produits_schema.jsonify(produits_to_get)
 

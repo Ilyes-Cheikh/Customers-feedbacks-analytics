@@ -18,7 +18,7 @@ def get_detailachats():
 
 
 @detailachat.route('/detailachat/getbyachat/<achat_id>' , methods = ['GET'])
-def get_datailachat_byachat(achat_id):
+def get_datailachat_byachatId(achat_id):
     datailachat_to_get = DetailAchat.query.filter_by(achat_id=achat_id)
     return detailachats_schema.jsonify(datailachat_to_get)
 
@@ -58,7 +58,7 @@ def update_detailachat(id):
     return detailachat_schema.jsonify(detailachat_to_update)
 
 @detailachat.route('/detailachat/getall', methods =['GET'])
-def get_all():
+def get_achat_join_detailachat():
     detailachats = DetailAchat.query.join(Achat, DetailAchat.achat_id == Achat.achat_id)\
                                 .add_columns(DetailAchat.detailachat_id,DetailAchat.achat_id,Achat.user_id, Achat.date_Achat, Achat.prix_Total_Achat,DetailAchat.id_produit,DetailAchat.quantite)\
                                 .join(Produit, DetailAchat.id_produit==Produit.id_produit)\

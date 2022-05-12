@@ -32,12 +32,12 @@ def create_app():
         bcrypt.init_app(app)
         jwt.init_app(app)
         with app.app_context():
-                from Application.Produit.routes import produit
-                from Application.Categorie.routes import categorie
-                from Application.User.routes import user
-                from Application.Comment.routes import comment
-                from Application.Achat.routes import achat
-                from Application.DetailAchat.routes import detailachat
+                from Application.APIs.Produit.routes import produit
+                from Application.APIs.Categorie.routes import categorie
+                from Application.APIs.User.routes import user
+                from Application.APIs.Comment.routes import comment
+                from Application.APIs.Achat.routes import achat
+                from Application.APIs.DetailAchat.routes import detailachat
 
                 app.register_blueprint(produit)
                 app.register_blueprint(categorie)
