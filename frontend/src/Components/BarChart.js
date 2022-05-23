@@ -27,7 +27,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Bar Chart',
+      text: 'Feedback mensuel',
     },
   },
 };
@@ -38,14 +38,14 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
-      data: [450,600,800,450,300,400,300],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      label: 'Negatif',
+      data: [10,4,8,13,5,6,2],
+      backgroundColor: 'rgba(255, 99, 132, 0.6)',
     },
     {
-      label: 'Dataset 2',
-      data:  [350,500,700,900,500,300,100],
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      label: 'Positif',
+      data:  [20,15,6,17,10,15,17],
+      backgroundColor: 'rgba(75, 192, 192, 0.6)',
     },
   ],
 };

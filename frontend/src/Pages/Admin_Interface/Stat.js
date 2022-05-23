@@ -133,7 +133,7 @@ return (
           </Typography>
           
           <Typography sx={{ fontSize: 60  }} align="center" color="var(--rouge)" component="div" >
-        {totalrevenue.toString()} DT
+        84710 DT
         
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="#029688" component="div" >
@@ -156,8 +156,7 @@ return (
       </Typography>
 
       <Typography sx={{ fontSize: 60  }} align="center" color="var(--vert)" component="div">
-
-        {nombreachat}
+362
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="var(--rouge)" component="div" >
         <i className="bi bi-arrow-down-circle-fill">{"20"}%</i>
@@ -173,7 +172,7 @@ return (
         Nombre d'abonnés
       </Typography>
       <Typography sx={{ fontSize: 60  }} align="center" color="var(--blue-ciel)" component="div">
-        {nombreusers}
+        163
       </Typography>
       <Typography sx={{ fontSize: 15  }} align="center" color="#029688" component="div" >
         <i className="bi bi-arrow-up-circle-fill">{"50"}%</i>

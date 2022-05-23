@@ -151,7 +151,7 @@ export default function LoginPage(props) {
                         <div>
                         <input type="text"  placeholder="Email"  value={loginemail ?? ""} required="True"onChange={(e)=> {setLoginemail(e.target.value)}} />
                         <input type="password"  placeholder="Mot de passe"   value={loginpassword ?? ""} required="True"  onChange={(e)=>{setLoginpassword(e.target.value)}}/>
-                        <button  className="loginButton" onClick={handleLoginSubmit}>Se connecter</button>
+                        <button  className="loginButton" onClick={handleLoginSubmit}>se Connecter</button>
                         </div>
                        
                 </div> 

@@ -12,7 +12,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Les 3 produits les plus vendus ',
+      text: 'Les 4 produits les plus vendus ',
     },
   },
 };
