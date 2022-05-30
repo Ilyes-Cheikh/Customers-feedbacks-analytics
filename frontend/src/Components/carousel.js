@@ -10,7 +10,7 @@ export default function Slider(){
         <Carousel.Item>
             <img 
                 className="d-block w-100"
-                src={im1}
+                src={im3}
                 alt="First slide"
                
             />
@@ -36,7 +36,7 @@ export default function Slider(){
         <Carousel.Item>
             <img
                 className="d-block w-100"
-                src={im3}
+                src={im1}
                 alt="Third slide"
               
             />

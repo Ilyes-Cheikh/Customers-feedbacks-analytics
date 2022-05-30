@@ -73,6 +73,11 @@
   
 
 }
+.menu-items li {
+  width: 247px;
+  font-size: 16px;
+  text-align: center;
+}
 .menu-items ul li:hover {
   background-color: var(--blue-ciel);
   border-radius: 0px 20px;
@@ -111,6 +116,18 @@
   flex-direction: column;
   justify-content: space-between;
   line-height: 3rem;
+}
+.pan_button{
+  height: 7vh;
+  margin-top: 0.5%;
+  margin-left: -10%;
+  display: flex;
+  
+}
+.panierimage{
+  height: 35px;
+  margin-left:  300px !important;
+ 
 }
 .content .col .img-wrapper {
   display: block;
@@ -195,14 +212,14 @@
   width: 220px !important;
 
 	height: 40px;
-	margin: 10px auto;
 	justify-content: center;
 	display: block;
 	color: #fff;
 	background: var(--rouge);
 	font-size: 1em;
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 5px;
+  margin-left: -250px;
 	outline: none;
 	border: none;
 	border-radius: 5px;
@@ -215,16 +232,13 @@
 }
 .LogoutButton{
   width: 200px;
-  margin-left: 600px !important;
+  margin-left:5%;
   height: 40px;
-	margin: 10px auto;
 	justify-content: center;
-	display: block;
 	color: #fff;
 	background: var(--rouge);
 	font-size: 1em;
 	font-weight: bold;
-	margin-top: 20px;
 	outline: none;
 	border: none;
 	border-radius: 5px;

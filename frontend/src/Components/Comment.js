@@ -6,6 +6,7 @@ import Userimg from '../Assets/images/user.jpg'
 import axios from 'axios';
 import ManageUser from './ManageUser';
 import Swal from 'sweetalert2'
+import moment from 'moment'
 function Comment(props) {
     const  [comments,setComments]= useState([])
     const [isloaded, setIsLoaded] = useState(false)
@@ -74,6 +75,7 @@ function Comment(props) {
     <div style={{ padding: 14, opacity: "0.8" }} className="App" >
       <Paper style={{ padding: "40px 20px" }}>
         {comments.map((item) => {
+          console.log(item.comment_date)
           return(
             <div>
             <Grid container wrap="wrap" spacing={2}>
@@ -86,7 +88,7 @@ function Comment(props) {
               {item.comment_text}
             </p>
             <p style={{ textAlign: "left", color: "gray", fontSize: "15px" }}>
-              posted 1 minute ago
+              Commenaire ajouté le {moment(item.comment_date).format('DD/MM/YYYY') }
             </p>
           </Grid>
         </Grid>

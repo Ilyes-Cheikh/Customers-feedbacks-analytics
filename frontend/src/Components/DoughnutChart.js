@@ -46,11 +46,11 @@ export default function DoughnutChart() {
    console.log("group", group);
 
   const data = {
-    labels: id,
+    labels: [id[0],id[1],id[2],id[3]],
     datasets: [
       {
         label: '# of Votes',
-        data: quantite,
+        data: [quantite[0],quantite[1],quantite[2],quantite[3]],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',

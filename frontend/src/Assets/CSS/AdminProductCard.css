@@ -55,6 +55,7 @@
    color: #ec4079;
    font-size: 30px;
    width: auto;
+   margin-top: 5%;
 }
 .prod_stat{
   display: flex;
@@ -94,5 +95,20 @@
 }
 .prog_bar_label{
     padding-top: 5%;
+    width : 90%;
     color: #a1a0a0;
+    text-align: center;
+}
+.one_button{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+.buttons{
+    width: 100%;
+    height: auto;
+    padding-top: 18%;
+    display: block;
 }

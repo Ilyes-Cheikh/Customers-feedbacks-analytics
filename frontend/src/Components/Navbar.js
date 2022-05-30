@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom';
 import ManageUser from './ManageUser'
 import Swal from 'sweetalert2'
+import panier from '../Assets/images/panier.png'
 function Navbar() {
   let history = useHistory()
   const { token, removeToken, setToken } = useToken();
@@ -81,9 +82,9 @@ function Navbar() {
       <a href="#" className="logo"><img src={logoblanc}/></a>
       <nav>
         <ul className="menu-items">
-          <li><a href="#" className="menu-item">Acceuil</a></li>
+          <li> <Link to="/" exact className="menu-item">Acceuil</Link></li>
           <li>
-            <a href="#" className="menu-item">Accéssoire et périphérique</a>
+          <Link to="/accessoires">Accéssoire et périphérique</Link>
             <div className="mega-menu">
               <div className="content">
               <div className="col">
@@ -133,7 +134,7 @@ function Navbar() {
             </div>
           </li>
           <li>
-            <a href="#" className="menu-item">Telephone & Tablette</a>
+          <Link to="/tablettes" className="menu-item">Telephone & Tablette</Link>
             <div className="mega-menu">
               <div className="content">
               <div className="col">
@@ -175,7 +176,7 @@ function Navbar() {
           </li>
        
        
-          <li><a href="#" className="menu-item">Composant informatique</a></li>
+          <li><Link to="/ordinateurs" className="menu-item">Ordinateur</Link></li>
          
         </ul>
       </nav>
@@ -185,7 +186,10 @@ function Navbar() {
       <button className='SignButton' >  Se connecter / S'inscrire  </button>
      </Link>
       </div> :
-      <div>
+      <div className='pan_button'>
+        <Link  to="/Panier">
+        <img  className="panierimage" src={panier}/>
+        </Link>
          <button className='LogoutButton'   onClick={logOut}> Déconnexion  </button>
       </div>
       

@@ -4,6 +4,7 @@ from Application.__init__ import db,bcrypt
 from Application.APIs.Comment.utils import predict
 
 
+
 #Creating the blueprint
 comment = Blueprint('comment',__name__)
 
@@ -17,9 +18,9 @@ def get_comments():
 @comment.route('/comment/get/byidproduit/<id>', methods =['GET'])
 def get_stat_by_idproduit(id):
     total_number_of_comments= len(Comment.query.filter_by(produit_id = id).all())
-    number_of_positive_comments = len(Comment.query.filter_by(produit_id = id , comment_label = "positive").all())
+    number_of_positive_comments = db.session.query(Comment).filter(Comment.produit_id == id , Comment.comment_label == "positive").count()
     if total_number_of_comments != 0 : 
-      satisfaction_rate = number_of_positive_comments / number_of_positive_comments
+      satisfaction_rate = number_of_positive_comments / total_number_of_comments
     else : satisfaction_rate = 0 
     result={"comments_number" : total_number_of_comments, "satisfaction_rate" : satisfaction_rate }
     return result
@@ -41,7 +42,8 @@ def add_comment():
     user_id = request.form.get('user_id')
     produit_id = request.form.get('produit_id')
     comment_label = predict(comment_text)
-    comment_to_add = Comment(comment_text=comment_text,comment_label=comment_label,user_id=user_id,produit_id=produit_id)
+    comment_date = request.form.get('comment_date')
+    comment_to_add = Comment(comment_text=comment_text,comment_label=comment_label,user_id=user_id,produit_id=produit_id,comment_date=comment_date)
     db.session.add(comment_to_add)
     db.session.commit()
     return comment_schema.jsonify(comment_to_add)
@@ -65,9 +67,9 @@ def update_comment(id):
 
 @comment.route('/comment/get/joinuser/<id>', methods=['GET'] )
 def get_commentjoinuser_byidproduit(id):
-    comments = Comment.query.join(User, Comment.user_id == User.user_id)\
-                                .add_columns(Comment.comment_id,Comment.comment_text,Comment.user_id, User.username, User.email)\
-                                .all()
+    comments = User.query.join(Comment, Comment.user_id == User.user_id)\
+                                .add_columns(Comment.comment_id,Comment.comment_text,Comment.user_id, User.username, User.email , Comment.comment_date)\
+                                .filter_by(produit_id=id)
 
     results = commentjoinusers_schema.dump(comments)
     return jsonify(results)

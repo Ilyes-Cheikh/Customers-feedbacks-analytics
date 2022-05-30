@@ -1,0 +1,53 @@
+.add_product_container {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.add_product_space{
+    width: 70%;
+    margin-left: 21%;
+    padding-top: 2%;
+}
+
+.add_text {
+    font-size: 2.5rem;
+    color: #ec4079;
+    text-align: center;
+}
+
+.add_product_form {
+    margin-top: -4%;
+}
+
+.l {
+    font-size: 1.5rem;
+    color: black;
+    width: 25%;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    text-align: left;
+}
+
+.ll {
+    width: 65%;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+
+}
+
+.input_area {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    padding-top: 10%;
+    margin: 0;
+
+}
+
+.sub {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}

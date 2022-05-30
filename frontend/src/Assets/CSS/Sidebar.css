@@ -1,0 +1,10 @@
+.side_menu_item{
+    margin-bottom: 20px;
+}
+.link_style_is{
+    text-decoration: none;
+    color : black;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 2px;
+}

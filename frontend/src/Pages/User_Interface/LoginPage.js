@@ -1,4 +1,3 @@
-
 import React,{useState,useEffect}from "react"
 import '../../Assets/CSS/LoginPage.css'
 import { useHistory } from 'react-router-dom';
@@ -62,7 +61,13 @@ export default function LoginPage(props) {
            if (response.status === 200) {
           console.log("la requête s'est envoyée avec succès ! ");
           console.log(response.data.error);
-           alert(JSON.stringify(response.data))
+          Swal.fire({
+               
+            icon: 'success',
+            title: response.data,
+            showConfirmButton: false,
+            timer: 2000
+          })
            }  
         })
         .catch((error) => {
@@ -101,15 +106,32 @@ export default function LoginPage(props) {
             console.log(response.data)
             props.setToken(response.data.access_token)
             saveUser(response.data.access_token)
+         
+            if(LoginForm.get("email")=="admin@techwave.com"){     
+                
             Swal.fire({
                
-                icon: 'success',
-                title: 'Vous êtes connecté(e) avec succès',
-                showConfirmButton: false,
-                timer: 2000
-              })
-         
-            history.push('/')
+                    icon: 'success',
+                    title: 'Vous êtes connecté(e) avec succès',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+             
+                
+                history.push('/admin')
+                window.location.reload()
+            }
+            else{
+                Swal.fire({
+               
+                    icon: 'success',
+                    title: 'Vous êtes connecté(e) avec succès',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+                 history.push('/')
+                }
+            
             })
             .catch((erreur)  => {
               console.log("fail")
@@ -151,7 +173,7 @@ export default function LoginPage(props) {
                         <div>
                         <input type="text"  placeholder="Email"  value={loginemail ?? ""} required="True"onChange={(e)=> {setLoginemail(e.target.value)}} />
                         <input type="password"  placeholder="Mot de passe"   value={loginpassword ?? ""} required="True"  onChange={(e)=>{setLoginpassword(e.target.value)}}/>
-                        <button  className="loginButton" onClick={handleLoginSubmit}>se Connecter</button>
+                        <button  className="loginButton" onClick={handleLoginSubmit}>Se connecter</button>
                         </div>
                        
                 </div> 

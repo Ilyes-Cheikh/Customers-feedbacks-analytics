@@ -4,11 +4,21 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Stat from "../Pages/Admin_Interface/Stat";
 import MenuItem from "./MenuItem";
 import ProductAdmin from "../Pages/Admin_Interface/ProductAdmin";
+import AdminCategoriePage from "../Components/AdminCategoriePage";
+import AddProduct from "../Pages/Admin_Interface/AddProduct";
+import '../Assets/CSS/Sidebar.css'
+import {Link} from "react-router-dom"
 /**
  * @author
  * @function SideMenu
  **/
-
+ function PproductAdmin() {
+  return (
+    <div className='product_admin_container'>
+     za3maaa tatla3 menha ? 
+    </div>
+  )
+}
 export const menuItems = [
   {
     name: "Dashboard",
@@ -17,18 +27,14 @@ export const menuItems = [
     iconClassName: "bi bi-speedometer2",
     component:Stat,
   },
-  {
-    name: "Produits",
-    exact: true,
-    to: `/admin/content`,
-    iconClassName: "bi bi-box-seam",
-    component:ProductAdmin,
-
-    subMenus: [
-      { name: "Courses", to: "/admin/content/courses",    component:Stat    },
-      { name: "Videos", to: "/admin/content/videos",     component:Stat    },
-    ],
-  },
+  
+      { name: "Ordinateurs", to: "/admin/ordinateurs",component:PproductAdmin  },
+      { name: "Téléphones", to: "/admin/produits/telephone",     component:Stat    },
+      { name: "Tablettes", to: "/admin/produits/tablettes",     component:Stat    },
+      { name: "Composants informatiques", to: "/admin/produits/composants",     component:Stat    },
+      { name: "Accéssoires et phéripheriques", to: "/admin/produits/acc",     component:Stat    },
+    
+  ,
  
   
 ];
@@ -84,24 +90,38 @@ const SideMenu = (props) => {
      
 
 
-      <div className="main-menu">
+      <div className="main-menu" style={{overflow:"hidden"}}>
         <ul className="ull">
-          {menuItems.map((menuItem, index) => (
-            <MenuItem
-              key={index}
-              name={menuItem.name}
-              exact={menuItem.exact}
-              to={menuItem.to}
-              subMenus={menuItem.subMenus || []}
-              iconClassName={menuItem.iconClassName}
-              onClick={(e) => {
-                if (inactive) {
-                  setInactive(false);
-                }
-              }}
-            />
-          ))}
-
+          <Link to="/admin" className="link_style_is">
+        <div className="side_menu_item">
+ Dashboard
+        </div>
+        </Link>
+        <Link to="/admin/addproduct" className="link_style_is">
+        <div className="side_menu_item">
+          Ajouter un produit 
+        </div>
+        </Link>
+        <Link to="/admin/ordinateurs" className="link_style_is">
+        <div className="side_menu_item">
+            Ordinateurs
+        </div>
+        </Link>
+        <Link to="/admin/accessoirs" className="link_style_is">
+        <div className="side_menu_item">
+        Accéssoires et périphériques
+        </div>
+        </Link>
+        <Link to="/admin/composant" className="link_style_is">
+        <div className="side_menu_item">
+            Composants informatique
+        </div>
+        </Link>
+        <Link to="/admin/pcc" className="link_style_is">
+        <div className="side_menu_item">
+          Télépohnes et tablettes
+        </div>
+        </Link>
         </ul>
       </div>
     </div>

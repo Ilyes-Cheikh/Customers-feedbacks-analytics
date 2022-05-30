@@ -11,6 +11,11 @@ import ComposantPage from './Pages/User_Interface/ComposantPage';
 import LoginPage from './Pages/User_Interface/LoginPage';
 import useToken from './Components/useToken';
 import ProfilePage from './Pages/User_Interface/ProfilePage';
+import AdminCategoriePage from './Components/AdminCategoriePage';
+import AdminCategOrd from './Components/AdminCategOrd';
+import AddProduct from './Pages/Admin_Interface/AddProduct';
+import AdminAcc from './Components/AdminAcc';
+import ListeCommande from './Components/ListeCommande';
 function App() {
   const { token, removeToken, setToken } = useToken();
   return (
@@ -19,9 +24,17 @@ function App() {
         <Route exact path="/admin">
           <AdminPage />
         </Route>
-      </Router>
-      
-      <Router>
+        <Route exact path="/admin/addproduct">
+          <AddProduct/>
+        </Route>
+        <Route exact path="/admin/ordinateurs">
+          <AdminCategOrd/>
+        </Route>
+        <Route exact path="/admin/accessoirs">
+          <AdminAcc/>
+        </Route>
+        <Route exact path="/admin/composant">
+        </Route>
 
         <Route exact path="/">
           <HomePage />
@@ -50,7 +63,9 @@ function App() {
       <Route exact path="/profile">
       <ProfilePage/>
       </Route>
-
+      <Route exact path="/Panier">
+      <ListeCommande/>
+      </Route>
       </Router>
 
     </div>

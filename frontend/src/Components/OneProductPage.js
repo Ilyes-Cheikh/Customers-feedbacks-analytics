@@ -6,12 +6,24 @@ import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
+import Swal from 'sweetalert2'
 export default function OneProductPage() {
   let { id_produit } = useParams();
   const [produit, setProduit] = useState({})
   const [isloaded, setIsLoaded] = useState(false)
-
+  const AcheterHandler = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Super !',
+      text: 'Ce produit est ajouté à votre panier',
+  
+    })
+    var commande = JSON.parse(localStorage.getItem('commande')) || [];
+    
+    commande.push({image: produit.image , nom: produit.nom_produit, prix : produit.prix_produit});
+   
+    localStorage.setItem('commande', JSON.stringify(commande));
+  }
   useEffect(() => {
     if (!isloaded) {
       axios.get(`http://127.0.0.1:5000/produit/get/${id_produit}`).then((data) => {
@@ -45,7 +57,7 @@ export default function OneProductPage() {
                     {produit.prix_produit} DT
                   </div>
                   <div className="prod_desc_buy">
-                    <Button style={{ width: " 35%", paddingTop: "1%", marginTop: "0%" }} variant="outline-danger" size="lg" disabled={produit.stock > 0 ? false : true}>Acheter</Button>
+                    <Button style={{ width: " 35%", paddingTop: "1%", marginTop: "0%" }} variant="outline-danger" size="lg" disabled={produit.stock > 0 ? false : true} onClick={AcheterHandler}>Acheter</Button>
                     <div className="stock"> {produit.stock > 0 ? "En stock" : "rupture du stock"}</div>
                   </div>
                 </div>

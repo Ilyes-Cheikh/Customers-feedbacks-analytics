@@ -286,3 +286,8 @@ body{
 .contain.inactive{
     margin-left: 80px;
 }
+
+.categ_component{
+    width: 75%;
+    margin-left: 25%;
+}

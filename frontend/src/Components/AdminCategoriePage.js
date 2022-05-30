@@ -4,7 +4,6 @@ import AdminProductCard from './AdminProductCard';
 
 export default function AdminCategoriePage(props) {
   const [getstatistics,setGetstatistics] = useState([])
-
   const getData = async () => {
     const res = await Axios.get(`http://localhost:5000/produit/getbycategorie/${props.id_categorie}`);
     const data = res.data
@@ -21,12 +20,12 @@ export default function AdminCategoriePage(props) {
 
   useEffect(() => {
     getData()
-  },[])
+  },[getstatistics["stock"]])
   return (
     <div className='pagination_container' >
       <div className='prod' style={{ display: "table", paddingLeft: 50 }}>
         {getstatistics.map((data, key) =>
-      <AdminProductCard nom_produit={data.nom_produit} description={data.description} image={data.image} prix_produit={data.prix_produit} comments_number={data.comments_number} satisfaction_rate={data.satisfaction_rate} />
+      <AdminProductCard id_produit={data.id_produit}  nom_produit={data.nom_produit} description={data.description} image={data.image} prix_produit={data.prix_produit} comments_number={data.comments_number} satisfaction_rate={data.satisfaction_rate} stock={data.stock} />
     )
   }
       </div>

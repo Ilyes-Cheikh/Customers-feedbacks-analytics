@@ -40,12 +40,12 @@ class Produit (db.Model):
 
 
 
-    def __init__ (self, nom_produit, description, image, categorie_id, prix, stock):
+    def __init__ (self, nom_produit, description, image, categorie_id, prix_produit, stock):
         self.nom_produit = nom_produit
         self.description= description
         self.image = image
         self.categorie_id = categorie_id
-        self.prix_produit= prix
+        self.prix_produit= prix_produit
         self.stock = stock
       
 class ProduitSchema(ma.Schema):
@@ -88,24 +88,25 @@ users_schema = UserSchema(many=True)
 
 #COMMENTS
 class Comment (db.Model):
-    
     comment_id = db.Column(db.Integer , primary_key=True)
     comment_text = db.Column (db.String(100), nullable=False)
     comment_label = db.Column (db.String(10) , nullable=False)
     produit_id = db.Column(db.Integer, db.ForeignKey("produit.id_produit"), nullable=False)
+    comment_date = db.Column(db.DateTime, default= datetime.datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
 
 
-    def __init__ (self,comment_text ,comment_label, produit_id, user_id):
+    def __init__ (self,comment_text ,comment_label, produit_id, user_id, comment_date):
         self.comment_text=comment_text
         self.comment_label=comment_label 
         self.produit_id=produit_id
         self.user_id = user_id
+        self.comment_date = comment_date
         
       
 class CommentSchema(ma.Schema):
     class Meta:
-        fields = ('comment_id', 'comment_text','comment_label', 'produit_id', 'user_id')
+        fields = ('comment_id', 'comment_text','comment_label', 'produit_id', 'user_id','comment_date')
 
 
 comment_schema = CommentSchema()
@@ -160,6 +161,6 @@ joindetailachats_schema = JoinDetailAchatSchema(many=True)
 
 class CommentJoinUserSchema(ma.Schema):
     class Meta:
-        fields = ('comment_id', 'comment_text','comment_label', 'produit_id', 'user_id' , 'username', 'email', 'password','address','mobile')
+        fields = ('comment_id', 'comment_text','comment_label', 'produit_id', 'user_id' , 'username', 'email', 'password','address','mobile' , 'comment_date')
 commentjoinuser_schema = CommentJoinUserSchema()
 commentjoinusers_schema = CommentJoinUserSchema(many=True)
